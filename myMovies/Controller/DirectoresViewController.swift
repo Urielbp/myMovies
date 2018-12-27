@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  myMovies
 //
 //  Created by Uriel Pinheiro on 27/12/2018.
@@ -8,9 +8,8 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class DirectoresViewController: UIViewController {
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
