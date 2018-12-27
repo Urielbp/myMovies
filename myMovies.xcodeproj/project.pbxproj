@@ -13,6 +13,26 @@
 		1F0A4F7D21D54E2B00E99872 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F7B21D54E2B00E99872 /* Main.storyboard */; };
 		1F0A4F7F21D54E2C00E99872 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F7E21D54E2C00E99872 /* Assets.xcassets */; };
 		1F0A4F8221D54E2C00E99872 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F8021D54E2C00E99872 /* LaunchScreen.storyboard */; };
+		1F0A4F8B21D54EE100E99872 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A4F8A21D54EE100E99872 /* Movie.swift */; };
+		1F0A4F8D21D54F1100E99872 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A4F8C21D54F1100E99872 /* Person.swift */; };
+		1F0A4F9221D54F5E00E99872 /* RGBiOSUtiliites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9121D54F5E00E99872 /* RGBiOSUtiliites.swift */; };
+		1F0A4F9421D54F7600E99872 /* RGBiOSUtilitiesBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9321D54F7600E99872 /* RGBiOSUtilitiesBundle.swift */; };
+		1F0A4F9621D54F8F00E99872 /* RGBiOSUtilitiesSandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9521D54F8F00E99872 /* RGBiOSUtilitiesSandbox.swift */; };
+		1F0A4FA621D54FC900E99872 /* Antonio_Banderas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9721D54FC600E99872 /* Antonio_Banderas.jpg */; };
+		1F0A4FA721D54FC900E99872 /* Heather_Graham.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9821D54FC600E99872 /* Heather_Graham.jpg */; };
+		1F0A4FA821D54FC900E99872 /* Quentin_Tarantino.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9921D54FC600E99872 /* Quentin_Tarantino.jpg */; };
+		1F0A4FA921D54FC900E99872 /* Cameron_Diaz.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9A21D54FC700E99872 /* Cameron_Diaz.jpg */; };
+		1F0A4FAA21D54FC900E99872 /* Julie_Andrews.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9B21D54FC700E99872 /* Julie_Andrews.jpg */; };
+		1F0A4FAB21D54FC900E99872 /* Salma_Hayek.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9C21D54FC700E99872 /* Salma_Hayek.jpg */; };
+		1F0A4FAC21D54FC900E99872 /* John_Lithgow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9D21D54FC700E99872 /* John_Lithgow.jpg */; };
+		1F0A4FAD21D54FC900E99872 /* Verne_Troyer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9E21D54FC700E99872 /* Verne_Troyer.jpg */; };
+		1F0A4FAE21D54FC900E99872 /* Steve_Buscemi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9F21D54FC700E99872 /* Steve_Buscemi.jpg */; };
+		1F0A4FAF21D54FC900E99872 /* Harvey_Keitel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA021D54FC700E99872 /* Harvey_Keitel.jpg */; };
+		1F0A4FB021D54FC900E99872 /* Tim_Roth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA121D54FC800E99872 /* Tim_Roth.jpg */; };
+		1F0A4FB121D54FC900E99872 /* Michael_York.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA221D54FC800E99872 /* Michael_York.jpg */; };
+		1F0A4FB221D54FC900E99872 /* Danny_Trejo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA321D54FC800E99872 /* Danny_Trejo.jpg */; };
+		1F0A4FB321D54FC900E99872 /* Mike_Myers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA421D54FC800E99872 /* Mike_Myers.jpg */; };
+		1F0A4FB421D54FC900E99872 /* Eddie_Murphy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA521D54FC900E99872 /* Eddie_Murphy.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +44,26 @@
 		1F0A4F7E21D54E2C00E99872 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F0A4F8121D54E2C00E99872 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F0A4F8321D54E2C00E99872 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F0A4F8A21D54EE100E99872 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		1F0A4F8C21D54F1100E99872 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		1F0A4F9121D54F5E00E99872 /* RGBiOSUtiliites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBiOSUtiliites.swift; sourceTree = "<group>"; };
+		1F0A4F9321D54F7600E99872 /* RGBiOSUtilitiesBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBiOSUtilitiesBundle.swift; sourceTree = "<group>"; };
+		1F0A4F9521D54F8F00E99872 /* RGBiOSUtilitiesSandbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBiOSUtilitiesSandbox.swift; sourceTree = "<group>"; };
+		1F0A4F9721D54FC600E99872 /* Antonio_Banderas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Antonio_Banderas.jpg; sourceTree = "<group>"; };
+		1F0A4F9821D54FC600E99872 /* Heather_Graham.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Heather_Graham.jpg; sourceTree = "<group>"; };
+		1F0A4F9921D54FC600E99872 /* Quentin_Tarantino.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Quentin_Tarantino.jpg; sourceTree = "<group>"; };
+		1F0A4F9A21D54FC700E99872 /* Cameron_Diaz.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cameron_Diaz.jpg; sourceTree = "<group>"; };
+		1F0A4F9B21D54FC700E99872 /* Julie_Andrews.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Julie_Andrews.jpg; sourceTree = "<group>"; };
+		1F0A4F9C21D54FC700E99872 /* Salma_Hayek.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Salma_Hayek.jpg; sourceTree = "<group>"; };
+		1F0A4F9D21D54FC700E99872 /* John_Lithgow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = John_Lithgow.jpg; sourceTree = "<group>"; };
+		1F0A4F9E21D54FC700E99872 /* Verne_Troyer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Verne_Troyer.jpg; sourceTree = "<group>"; };
+		1F0A4F9F21D54FC700E99872 /* Steve_Buscemi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Steve_Buscemi.jpg; sourceTree = "<group>"; };
+		1F0A4FA021D54FC700E99872 /* Harvey_Keitel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Harvey_Keitel.jpg; sourceTree = "<group>"; };
+		1F0A4FA121D54FC800E99872 /* Tim_Roth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tim_Roth.jpg; sourceTree = "<group>"; };
+		1F0A4FA221D54FC800E99872 /* Michael_York.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Michael_York.jpg; sourceTree = "<group>"; };
+		1F0A4FA321D54FC800E99872 /* Danny_Trejo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Danny_Trejo.jpg; sourceTree = "<group>"; };
+		1F0A4FA421D54FC800E99872 /* Mike_Myers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mike_Myers.jpg; sourceTree = "<group>"; };
+		1F0A4FA521D54FC900E99872 /* Eddie_Murphy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Eddie_Murphy.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +96,75 @@
 		1F0A4F7421D54E2B00E99872 /* myMovies */ = {
 			isa = PBXGroup;
 			children = (
-				1F0A4F7521D54E2B00E99872 /* AppDelegate.swift */,
-				1F0A4F7721D54E2B00E99872 /* FirstViewController.swift */,
-				1F0A4F7921D54E2B00E99872 /* SecondViewController.swift */,
-				1F0A4F7B21D54E2B00E99872 /* Main.storyboard */,
+				1F0A4F8921D54EC400E99872 /* Model */,
+				1F0A4F8E21D54F1900E99872 /* View */,
+				1F0A4F8F21D54F1F00E99872 /* Controller */,
+				1F0A4F9021D54F3C00E99872 /* RGB */,
+				1F0A4FB521D54FCE00E99872 /* Photos */,
 				1F0A4F7E21D54E2C00E99872 /* Assets.xcassets */,
-				1F0A4F8021D54E2C00E99872 /* LaunchScreen.storyboard */,
 				1F0A4F8321D54E2C00E99872 /* Info.plist */,
 			);
 			path = myMovies;
+			sourceTree = "<group>";
+		};
+		1F0A4F8921D54EC400E99872 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F0A4F8A21D54EE100E99872 /* Movie.swift */,
+				1F0A4F8C21D54F1100E99872 /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1F0A4F8E21D54F1900E99872 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F0A4F8021D54E2C00E99872 /* LaunchScreen.storyboard */,
+				1F0A4F7B21D54E2B00E99872 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1F0A4F8F21D54F1F00E99872 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F0A4F7521D54E2B00E99872 /* AppDelegate.swift */,
+				1F0A4F7721D54E2B00E99872 /* FirstViewController.swift */,
+				1F0A4F7921D54E2B00E99872 /* SecondViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1F0A4F9021D54F3C00E99872 /* RGB */ = {
+			isa = PBXGroup;
+			children = (
+				1F0A4F9121D54F5E00E99872 /* RGBiOSUtiliites.swift */,
+				1F0A4F9321D54F7600E99872 /* RGBiOSUtilitiesBundle.swift */,
+				1F0A4F9521D54F8F00E99872 /* RGBiOSUtilitiesSandbox.swift */,
+			);
+			path = RGB;
+			sourceTree = "<group>";
+		};
+		1F0A4FB521D54FCE00E99872 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				1F0A4F9721D54FC600E99872 /* Antonio_Banderas.jpg */,
+				1F0A4F9A21D54FC700E99872 /* Cameron_Diaz.jpg */,
+				1F0A4FA321D54FC800E99872 /* Danny_Trejo.jpg */,
+				1F0A4FA521D54FC900E99872 /* Eddie_Murphy.jpg */,
+				1F0A4FA021D54FC700E99872 /* Harvey_Keitel.jpg */,
+				1F0A4F9821D54FC600E99872 /* Heather_Graham.jpg */,
+				1F0A4F9D21D54FC700E99872 /* John_Lithgow.jpg */,
+				1F0A4F9B21D54FC700E99872 /* Julie_Andrews.jpg */,
+				1F0A4FA221D54FC800E99872 /* Michael_York.jpg */,
+				1F0A4FA421D54FC800E99872 /* Mike_Myers.jpg */,
+				1F0A4F9921D54FC600E99872 /* Quentin_Tarantino.jpg */,
+				1F0A4F9C21D54FC700E99872 /* Salma_Hayek.jpg */,
+				1F0A4F9F21D54FC700E99872 /* Steve_Buscemi.jpg */,
+				1F0A4FA121D54FC800E99872 /* Tim_Roth.jpg */,
+				1F0A4F9E21D54FC700E99872 /* Verne_Troyer.jpg */,
+			);
+			path = Photos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +228,21 @@
 				1F0A4F8221D54E2C00E99872 /* LaunchScreen.storyboard in Resources */,
 				1F0A4F7F21D54E2C00E99872 /* Assets.xcassets in Resources */,
 				1F0A4F7D21D54E2B00E99872 /* Main.storyboard in Resources */,
+				1F0A4FA621D54FC900E99872 /* Antonio_Banderas.jpg in Resources */,
+				1F0A4FA721D54FC900E99872 /* Heather_Graham.jpg in Resources */,
+				1F0A4FA821D54FC900E99872 /* Quentin_Tarantino.jpg in Resources */,
+				1F0A4FA921D54FC900E99872 /* Cameron_Diaz.jpg in Resources */,
+				1F0A4FAA21D54FC900E99872 /* Julie_Andrews.jpg in Resources */,
+				1F0A4FAB21D54FC900E99872 /* Salma_Hayek.jpg in Resources */,
+				1F0A4FAC21D54FC900E99872 /* John_Lithgow.jpg in Resources */,
+				1F0A4FAD21D54FC900E99872 /* Verne_Troyer.jpg in Resources */,
+				1F0A4FAE21D54FC900E99872 /* Steve_Buscemi.jpg in Resources */,
+				1F0A4FAF21D54FC900E99872 /* Harvey_Keitel.jpg in Resources */,
+				1F0A4FB021D54FC900E99872 /* Tim_Roth.jpg in Resources */,
+				1F0A4FB121D54FC900E99872 /* Michael_York.jpg in Resources */,
+				1F0A4FB221D54FC900E99872 /* Danny_Trejo.jpg in Resources */,
+				1F0A4FB321D54FC900E99872 /* Mike_Myers.jpg in Resources */,
+				1F0A4FB421D54FC900E99872 /* Eddie_Murphy.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +253,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F0A4F9621D54F8F00E99872 /* RGBiOSUtilitiesSandbox.swift in Sources */,
+				1F0A4F9221D54F5E00E99872 /* RGBiOSUtiliites.swift in Sources */,
+				1F0A4F8D21D54F1100E99872 /* Person.swift in Sources */,
+				1F0A4F9421D54F7600E99872 /* RGBiOSUtilitiesBundle.swift in Sources */,
 				1F0A4F7A21D54E2B00E99872 /* SecondViewController.swift in Sources */,
 				1F0A4F7621D54E2B00E99872 /* AppDelegate.swift in Sources */,
+				1F0A4F8B21D54EE100E99872 /* Movie.swift in Sources */,
 				1F0A4F7821D54E2B00E99872 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
