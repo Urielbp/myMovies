@@ -27,8 +27,8 @@ class PeliculaDetailViewControl: UIViewController, UITableViewDataSource {
         directorsTable.dataSource = self
         castTable.dataSource = self
         
-        directorsTable.register(UITableViewCell.self, forCellReuseIdentifier: "reuseDirectorDetail1")
-        castTable.register(UITableViewCell.self, forCellReuseIdentifier: "reuseDirectorDetail2")
+        directorsTable.register(UITableViewCell.self, forCellReuseIdentifier: "reuseMovieDetail1")
+        castTable.register(UITableViewCell.self, forCellReuseIdentifier: "reuseMovieDetail2")
         //actorsTable name changed, may get errors
         //TODO: set delegate for both tables
     }
@@ -68,7 +68,7 @@ class PeliculaDetailViewControl: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if(tableView.isEqual(self.directorsTable)){
-            if let cell = directorsTable.dequeueReusableCell(withIdentifier: "reuseDirectorDetail1") {
+            if let cell = directorsTable.dequeueReusableCell(withIdentifier: "reuseMovieDetail1") {
                 cell.textLabel?.text = m.Director?[indexPath.row]
                 return cell
             }
@@ -80,7 +80,7 @@ class PeliculaDetailViewControl: UIViewController, UITableViewDataSource {
             
         }
         else if (tableView.isEqual(self.castTable)){
-            if let cell = castTable.dequeueReusableCell(withIdentifier: "reuseDirectorDetail2") {
+            if let cell = castTable.dequeueReusableCell(withIdentifier: "reuseMovieDetail2") {
                 cell.textLabel?.text = m.Cast?[indexPath.row]
                 return cell
             }

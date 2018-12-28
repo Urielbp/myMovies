@@ -18,9 +18,9 @@ import UIKit
 //}
 
 struct Person {
-    var Name:String
-    var Birthday:Date
-    var Photo:UIImage
-    var MoviesAsDirector:[String]?
-    var MoviesAsActor:[String]?
+    var Name:String = ""
+    var Birthday:Date = Date()
+    var Photo:String = ""
+    var MoviesAsDirector:[String]? = nil
+    var MoviesAsActor:[String]? = nil
 }

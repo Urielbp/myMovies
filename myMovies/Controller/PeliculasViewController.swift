@@ -17,7 +17,7 @@ class PeliculasViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = table.dequeueReusableCell(withIdentifier: "reuse") {
+        if let cell = table.dequeueReusableCell(withIdentifier: "reuseMovie") {
             cell.textLabel?.text = movies[indexPath.row].Title
             return cell
         }
@@ -47,7 +47,7 @@ class PeliculasViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         table.dataSource = self
         table.delegate = self
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "reuse")
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "reuseMovie")
         var m = Movie()
         m.Title = "Shrek"
         movies.append(m)
