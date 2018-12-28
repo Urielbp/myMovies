@@ -9,10 +9,18 @@
 import Foundation
 import UIKit
 
+//struct Person {
+//    var Name:String
+//    var Birthday:Date
+//    var Photo:UIImage
+//    var MoviesAsDirector:[Movie]?
+//    var MoviesAsActor:[Movie]?
+//}
+
 struct Person {
     var Name:String
     var Birthday:Date
     var Photo:UIImage
-    var MoviesAsDirector:[Movie]?
-    var MoviesAsActor:[Movie]?
+    var MoviesAsDirector:[String]?
+    var MoviesAsActor:[String]?
 }

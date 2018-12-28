@@ -34,6 +34,7 @@
 		1F0A4FB321D54FC900E99872 /* Mike_Myers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA421D54FC800E99872 /* Mike_Myers.jpg */; };
 		1F0A4FB421D54FC900E99872 /* Eddie_Murphy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA521D54FC900E99872 /* Eddie_Murphy.jpg */; };
 		1F0A4FB721D5534E00E99872 /* ActoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A4FB621D5534E00E99872 /* ActoresViewController.swift */; };
+		1F3A40A621D5972D0078E94C /* PeliculaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A40A521D5972C0078E94C /* PeliculaDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		1F0A4FA421D54FC800E99872 /* Mike_Myers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mike_Myers.jpg; sourceTree = "<group>"; };
 		1F0A4FA521D54FC900E99872 /* Eddie_Murphy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Eddie_Murphy.jpg; sourceTree = "<group>"; };
 		1F0A4FB621D5534E00E99872 /* ActoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActoresViewController.swift; sourceTree = "<group>"; };
+		1F3A40A521D5972C0078E94C /* PeliculaDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeliculaDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				1F0A4F7521D54E2B00E99872 /* AppDelegate.swift */,
 				1F0A4F7721D54E2B00E99872 /* PeliculasViewController.swift */,
+				1F3A40A521D5972C0078E94C /* PeliculaDetailViewController.swift */,
 				1F0A4F7921D54E2B00E99872 /* DirectoresViewController.swift */,
 				1F0A4FB621D5534E00E99872 /* ActoresViewController.swift */,
 			);
@@ -202,6 +205,7 @@
 				TargetAttributes = {
 					1F0A4F7121D54E2B00E99872 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -262,6 +266,7 @@
 				1F0A4F9421D54F7600E99872 /* RGBiOSUtilitiesBundle.swift in Sources */,
 				1F0A4F7A21D54E2B00E99872 /* DirectoresViewController.swift in Sources */,
 				1F0A4F7621D54E2B00E99872 /* AppDelegate.swift in Sources */,
+				1F3A40A621D5972D0078E94C /* PeliculaDetailViewController.swift in Sources */,
 				1F0A4FB721D5534E00E99872 /* ActoresViewController.swift in Sources */,
 				1F0A4F8B21D54EE100E99872 /* Movie.swift in Sources */,
 				1F0A4F7821D54E2B00E99872 /* PeliculasViewController.swift in Sources */,
