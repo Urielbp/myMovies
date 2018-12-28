@@ -36,7 +36,7 @@ class PeliculaDetailViewControl: UIViewController, UITableViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         titleLabel.text = m.Title
         yearLabel.text = "Año: " + String(m.Year)
-        runtimeLabel.text = "Duración" + String(m.Runtime)
+        runtimeLabel.text = "Duración: " + String(m.Runtime) + " minutos"
         for c in m.Countries {
             countriesLabel.text?.append(contentsOf: c)
         }
@@ -45,20 +45,10 @@ class PeliculaDetailViewControl: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(tableView.isEqual(self.directorsTable)){
-            if let tableLength = self.m.Director?.count {
-                return tableLength
-            }
-            else {
-                return 0
-            }
+            return self.m.Directors.count
         }
         else if (tableView.isEqual(self.castTable)){
-            if let tableLength = self.m.Cast?.count {
-                return tableLength
-            }
-            else {
-                return 0
-            }
+            return self.m.Cast.count
         }
         else {
             return 0
@@ -69,7 +59,7 @@ class PeliculaDetailViewControl: UIViewController, UITableViewDataSource {
         
         if(tableView.isEqual(self.directorsTable)){
             if let cell = directorsTable.dequeueReusableCell(withIdentifier: "reuseMovieDetail1") {
-                cell.textLabel?.text = m.Director?[indexPath.row]
+                cell.textLabel?.text = m.Directors[indexPath.row]
                 return cell
             }
             else {
@@ -81,7 +71,7 @@ class PeliculaDetailViewControl: UIViewController, UITableViewDataSource {
         }
         else if (tableView.isEqual(self.castTable)){
             if let cell = castTable.dequeueReusableCell(withIdentifier: "reuseMovieDetail2") {
-                cell.textLabel?.text = m.Cast?[indexPath.row]
+                cell.textLabel?.text = m.Cast[indexPath.row]
                 return cell
             }
             else {

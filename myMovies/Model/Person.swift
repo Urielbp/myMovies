@@ -17,7 +17,7 @@ import UIKit
 //    var MoviesAsActor:[Movie]?
 //}
 
-struct Person {
+struct Person : Codable {
     var Name:String = ""
     var Birthday:Date = Date()
     var Photo:String = ""

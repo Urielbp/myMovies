@@ -48,9 +48,34 @@ class PeliculasViewController: UIViewController, UITableViewDataSource, UITableV
         table.dataSource = self
         table.delegate = self
         table.register(UITableViewCell.self, forCellReuseIdentifier: "reuseMovie")
-        var m = Movie()
-        m.Title = "Shrek"
-        movies.append(m)
+//        var m = Movie()
+//        m.Title = "Shrek"
+//        movies.append(m)
+        let fm = FileManager.default
+        
+        //String(contentsOf: URL)
+        //para descargar el contenido de la URL
+        
+        let documentsFolderURL = documentsURL()
+        //var filesList = listOfSandboxFilesIn(directory: documentsURL, withExtension: "json")
+        //TODO: Check if files are in local Documents.
+        //TODO: Move to Main controller
+        let jsonURL = documentsFolderURL.appendingPathComponent("movies.json")
+        let decoder = JSONDecoder()
+        if let jsonData = fm.contents(atPath: jsonURL.path) {
+            do {
+                var pelis = try decoder.decode([Movie].self, from: jsonData)
+                for p in pelis {
+                    movies.append(p)
+                }
+            }
+            catch {
+                print ("Error decoding JSON file " + jsonURL.absoluteString)
+                print (error)
+            }
+        }
+        
+        
     }
 
 

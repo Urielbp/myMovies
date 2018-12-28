@@ -34,6 +34,14 @@
 		1F0A4FB321D54FC900E99872 /* Mike_Myers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA421D54FC800E99872 /* Mike_Myers.jpg */; };
 		1F0A4FB421D54FC900E99872 /* Eddie_Murphy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA521D54FC900E99872 /* Eddie_Murphy.jpg */; };
 		1F0A4FB721D5534E00E99872 /* ActoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A4FB621D5534E00E99872 /* ActoresViewController.swift */; };
+		1F1C174B21D6CA0F00705AE5 /* Chris_Miller.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174321D6CA0C00705AE5 /* Chris_Miller.jpg */; };
+		1F1C174C21D6CA0F00705AE5 /* Robert_Rodriguez.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174421D6CA0C00705AE5 /* Robert_Rodriguez.jpg */; };
+		1F1C174D21D6CA0F00705AE5 /* Jay_Roach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174521D6CA0D00705AE5 /* Jay_Roach.jpg */; };
+		1F1C174E21D6CA0F00705AE5 /* Conrad_Vernon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174621D6CA0D00705AE5 /* Conrad_Vernon.jpg */; };
+		1F1C174F21D6CA0F00705AE5 /* Kelly_Asbury.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174721D6CA0D00705AE5 /* Kelly_Asbury.jpg */; };
+		1F1C175021D6CA0F00705AE5 /* Andrew_Adamson.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174821D6CA0E00705AE5 /* Andrew_Adamson.jpg */; };
+		1F1C175121D6CA0F00705AE5 /* Vicky_Jenson.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174921D6CA0E00705AE5 /* Vicky_Jenson.jpg */; };
+		1F1C175221D6CA0F00705AE5 /* Raman_Hui.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174A21D6CA0F00705AE5 /* Raman_Hui.jpg */; };
 		1F3A40A621D5972D0078E94C /* PeliculaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A40A521D5972C0078E94C /* PeliculaDetailViewController.swift */; };
 		1F3A40AA21D5C3D80078E94C /* PersonDetailViewConrtoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A40A921D5C3D80078E94C /* PersonDetailViewConrtoller.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +76,14 @@
 		1F0A4FA421D54FC800E99872 /* Mike_Myers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Mike_Myers.jpg; sourceTree = "<group>"; };
 		1F0A4FA521D54FC900E99872 /* Eddie_Murphy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Eddie_Murphy.jpg; sourceTree = "<group>"; };
 		1F0A4FB621D5534E00E99872 /* ActoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActoresViewController.swift; sourceTree = "<group>"; };
+		1F1C174321D6CA0C00705AE5 /* Chris_Miller.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Chris_Miller.jpg; sourceTree = "<group>"; };
+		1F1C174421D6CA0C00705AE5 /* Robert_Rodriguez.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Robert_Rodriguez.jpg; sourceTree = "<group>"; };
+		1F1C174521D6CA0D00705AE5 /* Jay_Roach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Jay_Roach.jpg; sourceTree = "<group>"; };
+		1F1C174621D6CA0D00705AE5 /* Conrad_Vernon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Conrad_Vernon.jpg; sourceTree = "<group>"; };
+		1F1C174721D6CA0D00705AE5 /* Kelly_Asbury.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Kelly_Asbury.jpg; sourceTree = "<group>"; };
+		1F1C174821D6CA0E00705AE5 /* Andrew_Adamson.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Andrew_Adamson.jpg; sourceTree = "<group>"; };
+		1F1C174921D6CA0E00705AE5 /* Vicky_Jenson.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Vicky_Jenson.jpg; sourceTree = "<group>"; };
+		1F1C174A21D6CA0F00705AE5 /* Raman_Hui.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Raman_Hui.jpg; sourceTree = "<group>"; };
 		1F3A40A521D5972C0078E94C /* PeliculaDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeliculaDetailViewController.swift; sourceTree = "<group>"; };
 		1F3A40A921D5C3D80078E94C /* PersonDetailViewConrtoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewConrtoller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +173,14 @@
 		1F0A4FB521D54FCE00E99872 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				1F1C174821D6CA0E00705AE5 /* Andrew_Adamson.jpg */,
+				1F1C174321D6CA0C00705AE5 /* Chris_Miller.jpg */,
+				1F1C174621D6CA0D00705AE5 /* Conrad_Vernon.jpg */,
+				1F1C174521D6CA0D00705AE5 /* Jay_Roach.jpg */,
+				1F1C174721D6CA0D00705AE5 /* Kelly_Asbury.jpg */,
+				1F1C174A21D6CA0F00705AE5 /* Raman_Hui.jpg */,
+				1F1C174421D6CA0C00705AE5 /* Robert_Rodriguez.jpg */,
+				1F1C174921D6CA0E00705AE5 /* Vicky_Jenson.jpg */,
 				1F0A4F9721D54FC600E99872 /* Antonio_Banderas.jpg */,
 				1F0A4F9A21D54FC700E99872 /* Cameron_Diaz.jpg */,
 				1F0A4FA321D54FC800E99872 /* Danny_Trejo.jpg */,
@@ -202,6 +226,9 @@
 		1F0A4F6A21D54E2B00E99872 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Uriel Pinheiro";
@@ -253,6 +280,14 @@
 				1F0A4FB221D54FC900E99872 /* Danny_Trejo.jpg in Resources */,
 				1F0A4FB321D54FC900E99872 /* Mike_Myers.jpg in Resources */,
 				1F0A4FB421D54FC900E99872 /* Eddie_Murphy.jpg in Resources */,
+				1F1C174B21D6CA0F00705AE5 /* Chris_Miller.jpg in Resources */,
+				1F1C174C21D6CA0F00705AE5 /* Robert_Rodriguez.jpg in Resources */,
+				1F1C174D21D6CA0F00705AE5 /* Jay_Roach.jpg in Resources */,
+				1F1C174E21D6CA0F00705AE5 /* Conrad_Vernon.jpg in Resources */,
+				1F1C174F21D6CA0F00705AE5 /* Kelly_Asbury.jpg in Resources */,
+				1F1C175021D6CA0F00705AE5 /* Andrew_Adamson.jpg in Resources */,
+				1F1C175121D6CA0F00705AE5 /* Vicky_Jenson.jpg in Resources */,
+				1F1C175221D6CA0F00705AE5 /* Raman_Hui.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

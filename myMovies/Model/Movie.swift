@@ -20,13 +20,13 @@ import UIKit
 //
 //}
 
-struct Movie {
+struct Movie : Codable {
     var Title:String = ""
     var Year:Int = -1
     var Runtime:Int = -1
     var Countries:[String] = [""]
-    var Director:[String]? = [""]
-    var Cast:[String]? = [""]
-    var Trailer:String? = ""
+    var Directors:[String] = [""]
+    var Cast:[String] = [""]
+    var Trailer:String = ""
     
 }
