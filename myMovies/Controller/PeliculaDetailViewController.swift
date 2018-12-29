@@ -29,6 +29,8 @@ class PeliculaDetailViewControl: UIViewController, UITableViewDataSource {
         
         directorsTable.register(UITableViewCell.self, forCellReuseIdentifier: "reuseMovieDetail1")
         castTable.register(UITableViewCell.self, forCellReuseIdentifier: "reuseMovieDetail2")
+        
+        
         //actorsTable name changed, may get errors
         //TODO: set delegate for both tables
     }

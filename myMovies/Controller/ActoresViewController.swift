@@ -52,10 +52,25 @@ class ActoresViewController: UIViewController, UITableViewDataSource, UITableVie
         table.register(UITableViewCell.self, forCellReuseIdentifier: "reuseActors")
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
-        let d = Person(Name: "Cameron Diaz", Birthday: formatter.date(from: "10/10/1910")!, Photo: "Cameron_Diaz.jpg", MoviesAsDirector: [""], MoviesAsActor: [""])
-        let d2 = Person(Name: "Mike Myers", Birthday: formatter.date(from: "10/10/1910")!, Photo: "Mike_Myers.jpg", MoviesAsDirector: [""], MoviesAsActor: [""])
-        actors.append(d)
-        actors.append(d2)
+        let fm = FileManager.default
+        let documentsFolderURL = documentsURL()
+        //var filesList = listOfSandboxFilesIn(directory: documentsURL, withExtension: "json")
+        //TODO: Check if files are in local Documents.
+        //TODO: Move to Main controller
+        let jsonURL = documentsFolderURL.appendingPathComponent("actors.json")
+        let decoder = JSONDecoder()
+        if let jsonData = fm.contents(atPath: jsonURL.path) {
+            do {
+                let actorsData = try decoder.decode([Person].self, from: jsonData)
+                for a in actorsData {
+                    actors.append(a)
+                }
+            }
+            catch {
+                print ("Error decoding JSON file " + jsonURL.absoluteString)
+                print (error)
+            }
+        }
     }
     
     

@@ -64,9 +64,9 @@ class PeliculasViewController: UIViewController, UITableViewDataSource, UITableV
         let decoder = JSONDecoder()
         if let jsonData = fm.contents(atPath: jsonURL.path) {
             do {
-                var pelis = try decoder.decode([Movie].self, from: jsonData)
-                for p in pelis {
-                    movies.append(p)
+                let moviesData = try decoder.decode([Movie].self, from: jsonData)
+                for m in moviesData {
+                    movies.append(m)
                 }
             }
             catch {

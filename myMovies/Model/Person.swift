@@ -19,8 +19,7 @@ import UIKit
 
 struct Person : Codable {
     var Name:String = ""
-    var Birthday:Date = Date()
+    var Birthday:String = ""
     var Photo:String = ""
-    var MoviesAsDirector:[String]? = nil
-    var MoviesAsActor:[String]? = nil
+    var Movies:[String] = []
 }

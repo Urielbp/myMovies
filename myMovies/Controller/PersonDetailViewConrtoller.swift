@@ -29,55 +29,24 @@ class PersonDetailViewConrtoller : UIViewController, UITableViewDataSource {
     
     override func viewWillAppear(_ animated: Bool) {
         nameLabel.text = p.Name
-        bdayLabel.text = formatter.string(from: p.Birthday)
-        photoUIImageView.image = UIImage(named: p.Photo)
+        //bdayLabel.text = formatter.string(from: p.Birthday)
+        bdayLabel.text = p.Birthday
+        photoUIImageView.image = UIImage(named: p.Name + ".jpg")
+        //TODO: Download the file in the p.Photo URL if the local file doesn't exist
+        photoUIImageView.contentMode = .scaleAspectFit
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch personType {
-        case 1:
-            if let count = p.MoviesAsDirector?.count{
-                return count
-            }
-            else {
-                return 0
-            }
-        case 2:
-            if let count = p.MoviesAsActor?.count{
-                return count
-            }
-            else {
-                return 0
-            }
-        default:
-            return 0
-        }
+        return p.Movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch personType {
-        case 1:
-            if let cell = table.dequeueReusableCell(withIdentifier: "reuseDirectorDetail") {
-                cell.textLabel?.text = p.MoviesAsDirector?[indexPath.row]
-                return cell
-            }
-            else {
-                let cell = UITableViewCell()
-                cell.textLabel?.text = "Nothing to show"
-                return cell
-            }
-        case 2:
-            if let cell = table.dequeueReusableCell(withIdentifier: "reuseDirectorDetail") {
-                cell.textLabel?.text = p.MoviesAsActor?[indexPath.row]
-                return cell
-            }
-            else {
-                let cell = UITableViewCell()
-                cell.textLabel?.text = "Nothing to show"
-                return cell
-            }
-        default:
+        if let cell = table.dequeueReusableCell(withIdentifier: "reuseDirectorDetail") {
+            cell.textLabel?.text = p.Movies[indexPath.row]
+            return cell
+        }
+        else {
             let cell = UITableViewCell()
             cell.textLabel?.text = "Nothing to show"
             return cell
