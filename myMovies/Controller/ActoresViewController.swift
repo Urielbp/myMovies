@@ -52,26 +52,27 @@ class ActoresViewController: UIViewController, UITableViewDataSource, UITableVie
         table.register(UITableViewCell.self, forCellReuseIdentifier: "reuseActors")
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
-        let fm = FileManager.default
-        let documentsFolderURL = documentsURL()
-        //var filesList = listOfSandboxFilesIn(directory: documentsURL, withExtension: "json")
-        //TODO: Check if files are in local Documents.
-        //TODO: Move to Main controller
-        let jsonURL = documentsFolderURL.appendingPathComponent("actors.json")
-        let decoder = JSONDecoder()
-        if let jsonData = fm.contents(atPath: jsonURL.path) {
-            do {
-                let actorsData = try decoder.decode([Person].self, from: jsonData)
-                for a in actorsData {
-                    actors.append(a)
-                }
-            }
-            catch {
-                print ("Error decoding JSON file " + jsonURL.absoluteString)
-                print (error)
-            }
-        }
-        ActorsList.shared = actors
+        actors = ActorsList.shared
+//        let fm = FileManager.default
+//        let documentsFolderURL = documentsURL()
+//        //var filesList = listOfSandboxFilesIn(directory: documentsURL, withExtension: "json")
+//        //TODO: Check if files are in local Documents.
+//        //TODO: Move to Main controller
+//        let jsonURL = documentsFolderURL.appendingPathComponent("actors.json")
+//        let decoder = JSONDecoder()
+//        if let jsonData = fm.contents(atPath: jsonURL.path) {
+//            do {
+//                let actorsData = try decoder.decode([Person].self, from: jsonData)
+//                for a in actorsData {
+//                    actors.append(a)
+//                }
+//            }
+//            catch {
+//                print ("Error decoding JSON file " + jsonURL.absoluteString)
+//                print (error)
+//            }
+//        }
+//        ActorsList.shared = actors
     }
     
     

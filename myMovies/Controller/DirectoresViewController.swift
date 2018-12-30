@@ -53,30 +53,31 @@ class DirectoresViewController: UIViewController , UITableViewDataSource, UITabl
         table.register(UITableViewCell.self, forCellReuseIdentifier: "reuseDirectors")
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
-        let fm = FileManager.default
+        directors = DirectorsList.shared
+//        let fm = FileManager.default
         
         //String(contentsOf: URL)
         //para descargar el contenido de la URL
         
-        let documentsFolderURL = documentsURL()
-        //var filesList = listOfSandboxFilesIn(directory: documentsURL, withExtension: "json")
-        //TODO: Check if files are in local Documents.
-        //TODO: Move to Main controller
-        let jsonURL = documentsFolderURL.appendingPathComponent("directors.json")
-        let decoder = JSONDecoder()
-        if let jsonData = fm.contents(atPath: jsonURL.path) {
-            do {
-                let directorsData = try decoder.decode([Person].self, from: jsonData)
-                for d in directorsData {
-                    directors.append(d)
-                }
-            }
-            catch {
-                print ("Error decoding JSON file " + jsonURL.absoluteString)
-                print (error)
-            }
-        }
-        DirectorsList.shared = directors
+//        let documentsFolderURL = documentsURL()
+//        //var filesList = listOfSandboxFilesIn(directory: documentsURL, withExtension: "json")
+//        //TODO: Check if files are in local Documents.
+//        //TODO: Move to Main controller
+//        let jsonURL = documentsFolderURL.appendingPathComponent("directors.json")
+//        let decoder = JSONDecoder()
+//        if let jsonData = fm.contents(atPath: jsonURL.path) {
+//            do {
+//                let directorsData = try decoder.decode([Person].self, from: jsonData)
+//                for d in directorsData {
+//                    directors.append(d)
+//                }
+//            }
+//            catch {
+//                print ("Error decoding JSON file " + jsonURL.absoluteString)
+//                print (error)
+//            }
+//        }
+//        DirectorsList.shared = directors
     }
 
 

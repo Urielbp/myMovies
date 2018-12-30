@@ -49,47 +49,48 @@ class PeliculasViewController: UIViewController, UITableViewDataSource, UITableV
         table.dataSource = self
         table.delegate = self
         table.register(UITableViewCell.self, forCellReuseIdentifier: "reuseMovie")
+        movies = MoviesList.shared
 //        var m = Movie()
 //        m.Title = "Shrek"
 //        movies.append(m)
-        let fm = FileManager.default
-        
-        //String(contentsOf: URL)
-        //para descargar el contenido de la URL
-        
-        let documentsFolderURL = documentsURL()
-        //var filesList = listOfSandboxFilesIn(directory: documentsURL, withExtension: "json")
-        //TODO: Check if files are in local Documents.
-        //TODO: Move to Main controller
-        
-        //local
-        let jsonURL = documentsFolderURL.appendingPathComponent("movies.json")
-        
-        //remote
-//        let jsonURL = URL(string: "localhost:3000/movies.json")
-        
-//        do {
-//            let jsonString = try String(contentsOf: jsonURL)
-//            print (jsonString)
+//        let fm = FileManager.default
+//
+//        //String(contentsOf: URL)
+//        //para descargar el contenido de la URL
+//
+//        let documentsFolderURL = documentsURL()
+//        //var filesList = listOfSandboxFilesIn(directory: documentsURL, withExtension: "json")
+//        //TODO: Check if files are in local Documents.
+//        //TODO: Move to Main controller
+//
+//        //local
+//        let jsonURL = documentsFolderURL.appendingPathComponent("movies.json")
+//
+//        //remote
+////        let jsonURL = URL(string: "localhost:3000/movies.json")
+//
+////        do {
+////            let jsonString = try String(contentsOf: jsonURL)
+////            print (jsonString)
+////        }
+////        catch {
+////            print ("Error decoding remote JSON file " + jsonURL.absoluteString)
+////            print (error)
+////        }
+//        let decoder = JSONDecoder()
+//        if let jsonData = fm.contents(atPath: jsonURL.path) {
+//            do {
+//                let moviesData = try decoder.decode([Movie].self, from: jsonData)
+//                for m in moviesData {
+//                    movies.append(m)
+//                }
+//            }
+//            catch {
+//                print ("Error decoding JSON file " + jsonURL.absoluteString)
+//                print (error)
+//            }
 //        }
-//        catch {
-//            print ("Error decoding remote JSON file " + jsonURL.absoluteString)
-//            print (error)
-//        }
-        let decoder = JSONDecoder()
-        if let jsonData = fm.contents(atPath: jsonURL.path) {
-            do {
-                let moviesData = try decoder.decode([Movie].self, from: jsonData)
-                for m in moviesData {
-                    movies.append(m)
-                }
-            }
-            catch {
-                print ("Error decoding JSON file " + jsonURL.absoluteString)
-                print (error)
-            }
-        }
-        MoviesList.shared = movies
+//        MoviesList.shared = movies
     }
 
 

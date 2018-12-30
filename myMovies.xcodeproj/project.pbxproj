@@ -48,6 +48,7 @@
 		1F3A40A621D5972D0078E94C /* PeliculaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A40A521D5972C0078E94C /* PeliculaDetailViewController.swift */; };
 		1F3A40AA21D5C3D80078E94C /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A40A921D5C3D80078E94C /* PersonDetailViewController.swift */; };
 		1FA03AF321D82DEF000C313D /* Chris Penn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FA03AF221D82DEE000C313D /* Chris Penn.jpg */; };
+		1FE10E2321D95A7A00469BD1 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE10E2221D95A7A00469BD1 /* TabController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		1F3A40A521D5972C0078E94C /* PeliculaDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeliculaDetailViewController.swift; sourceTree = "<group>"; };
 		1F3A40A921D5C3D80078E94C /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		1FA03AF221D82DEE000C313D /* Chris Penn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Chris Penn.jpg"; sourceTree = "<group>"; };
+		1FE10E2221D95A7A00469BD1 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				1F0A4F7921D54E2B00E99872 /* DirectoresViewController.swift */,
 				1F0A4FB621D5534E00E99872 /* ActoresViewController.swift */,
 				1F3A40A921D5C3D80078E94C /* PersonDetailViewController.swift */,
+				1FE10E2221D95A7A00469BD1 /* TabController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				1F0A4F7621D54E2B00E99872 /* AppDelegate.swift in Sources */,
 				1F3A40A621D5972D0078E94C /* PeliculaDetailViewController.swift in Sources */,
 				1F0A4FB721D5534E00E99872 /* ActoresViewController.swift in Sources */,
+				1FE10E2321D95A7A00469BD1 /* TabController.swift in Sources */,
 				1F0A4F8B21D54EE100E99872 /* Movie.swift in Sources */,
 				1F23F6F921D873A700C819A4 /* DirectorsList.swift in Sources */,
 				1F23F6F521D8733600C819A4 /* MoviesList.swift in Sources */,
