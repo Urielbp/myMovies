@@ -32,7 +32,7 @@ class ActoresViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "actorsDetailSegue") {
-            let detailView = segue.destination as! PersonDetailViewConrtoller
+            let detailView = segue.destination as! PersonDetailViewController
             detailView.personType = 2
             if let rowIndex = self.table.indexPathForSelectedRow {
                 detailView.p = actors[rowIndex.row]
@@ -71,6 +71,7 @@ class ActoresViewController: UIViewController, UITableViewDataSource, UITableVie
                 print (error)
             }
         }
+        ActorsList.shared = actors
     }
     
     

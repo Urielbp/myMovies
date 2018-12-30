@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class PersonDetailViewConrtoller : UIViewController, UITableViewDataSource {
+class PersonDetailViewController : UIViewController, UITableViewDataSource , UITableViewDelegate{
     //Outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bdayLabel: UILabel!
@@ -19,11 +19,13 @@ class PersonDetailViewConrtoller : UIViewController, UITableViewDataSource {
     var p:Person = Person()
     var formatter = DateFormatter()
     var personType:Int = -1
+    //var selectedMovie = Movie()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         formatter.dateFormat = "dd/MM/yyyy"
         table.dataSource = self
+        table.delegate = self
         table.register(UITableViewCell.self, forCellReuseIdentifier: "reuseDirectorDetail")
     }
     
@@ -35,6 +37,21 @@ class PersonDetailViewConrtoller : UIViewController, UITableViewDataSource {
         //TODO: Download the file in the p.Photo URL if the local file doesn't exist
         photoUIImageView.contentMode = .scaleAspectFit
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //selectedMovie = tableView[indexPath.row]
+        performSegue(withIdentifier: "personDetailToMovieDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "personDetailToMovieDetail") {
+            let detailView = segue.destination as! PeliculaDetailViewController
+            //let pvtSender = sender as! PersonDetailViewController
+            if let rowIndex = table.indexPathForSelectedRow?.row {
+                detailView.prepareForOutsideDetailView(forMovie: self.p.Movies[rowIndex])
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,5 +68,23 @@ class PersonDetailViewConrtoller : UIViewController, UITableViewDataSource {
             cell.textLabel?.text = "Nothing to show"
             return cell
         }
+    }
+    
+    public func prepareForOutsideDetailView(forPerson person: String, whichIs type: Int) {
+        switch type {
+        case 1:
+            //Actor
+            p = ActorsList.shared.filter {$0.Name == person}[0]
+            break
+        case 2:
+            //Director
+            p = DirectorsList.shared.filter {$0.Name == person}[0]
+            break
+        default:
+            print("Unidentified type for Person")
+            print("This shouldn't happen")
+            break
+        }
+        
     }
 }

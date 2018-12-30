@@ -42,8 +42,11 @@
 		1F1C175021D6CA0F00705AE5 /* Andrew Adamson.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174821D6CA0E00705AE5 /* Andrew Adamson.jpg */; };
 		1F1C175121D6CA0F00705AE5 /* Vicky Jenson.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174921D6CA0E00705AE5 /* Vicky Jenson.jpg */; };
 		1F1C175221D6CA0F00705AE5 /* Raman Hui.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174A21D6CA0F00705AE5 /* Raman Hui.jpg */; };
+		1F23F6F521D8733600C819A4 /* MoviesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F23F6F421D8733600C819A4 /* MoviesList.swift */; };
+		1F23F6F721D8736D00C819A4 /* ActorsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F23F6F621D8736D00C819A4 /* ActorsList.swift */; };
+		1F23F6F921D873A700C819A4 /* DirectorsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F23F6F821D873A700C819A4 /* DirectorsList.swift */; };
 		1F3A40A621D5972D0078E94C /* PeliculaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A40A521D5972C0078E94C /* PeliculaDetailViewController.swift */; };
-		1F3A40AA21D5C3D80078E94C /* PersonDetailViewConrtoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A40A921D5C3D80078E94C /* PersonDetailViewConrtoller.swift */; };
+		1F3A40AA21D5C3D80078E94C /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A40A921D5C3D80078E94C /* PersonDetailViewController.swift */; };
 		1FA03AF321D82DEF000C313D /* Chris Penn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FA03AF221D82DEE000C313D /* Chris Penn.jpg */; };
 /* End PBXBuildFile section */
 
@@ -85,8 +88,11 @@
 		1F1C174821D6CA0E00705AE5 /* Andrew Adamson.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Andrew Adamson.jpg"; sourceTree = "<group>"; };
 		1F1C174921D6CA0E00705AE5 /* Vicky Jenson.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Vicky Jenson.jpg"; sourceTree = "<group>"; };
 		1F1C174A21D6CA0F00705AE5 /* Raman Hui.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Raman Hui.jpg"; sourceTree = "<group>"; };
+		1F23F6F421D8733600C819A4 /* MoviesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesList.swift; sourceTree = "<group>"; };
+		1F23F6F621D8736D00C819A4 /* ActorsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorsList.swift; sourceTree = "<group>"; };
+		1F23F6F821D873A700C819A4 /* DirectorsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectorsList.swift; sourceTree = "<group>"; };
 		1F3A40A521D5972C0078E94C /* PeliculaDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeliculaDetailViewController.swift; sourceTree = "<group>"; };
-		1F3A40A921D5C3D80078E94C /* PersonDetailViewConrtoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewConrtoller.swift; sourceTree = "<group>"; };
+		1F3A40A921D5C3D80078E94C /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
 		1FA03AF221D82DEE000C313D /* Chris Penn.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Chris Penn.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +142,9 @@
 			children = (
 				1F0A4F8A21D54EE100E99872 /* Movie.swift */,
 				1F0A4F8C21D54F1100E99872 /* Person.swift */,
+				1F23F6F421D8733600C819A4 /* MoviesList.swift */,
+				1F23F6F621D8736D00C819A4 /* ActorsList.swift */,
+				1F23F6F821D873A700C819A4 /* DirectorsList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -152,12 +161,12 @@
 		1F0A4F8F21D54F1F00E99872 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1F3A40A921D5C3D80078E94C /* PersonDetailViewConrtoller.swift */,
 				1F0A4F7521D54E2B00E99872 /* AppDelegate.swift */,
 				1F0A4F7721D54E2B00E99872 /* PeliculasViewController.swift */,
 				1F3A40A521D5972C0078E94C /* PeliculaDetailViewController.swift */,
 				1F0A4F7921D54E2B00E99872 /* DirectoresViewController.swift */,
 				1F0A4FB621D5534E00E99872 /* ActoresViewController.swift */,
+				1F3A40A921D5C3D80078E94C /* PersonDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -303,15 +312,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F0A4F9621D54F8F00E99872 /* RGBiOSUtilitiesSandbox.swift in Sources */,
-				1F3A40AA21D5C3D80078E94C /* PersonDetailViewConrtoller.swift in Sources */,
+				1F3A40AA21D5C3D80078E94C /* PersonDetailViewController.swift in Sources */,
 				1F0A4F9221D54F5E00E99872 /* RGBiOSUtiliites.swift in Sources */,
 				1F0A4F8D21D54F1100E99872 /* Person.swift in Sources */,
 				1F0A4F9421D54F7600E99872 /* RGBiOSUtilitiesBundle.swift in Sources */,
+				1F23F6F721D8736D00C819A4 /* ActorsList.swift in Sources */,
 				1F0A4F7A21D54E2B00E99872 /* DirectoresViewController.swift in Sources */,
 				1F0A4F7621D54E2B00E99872 /* AppDelegate.swift in Sources */,
 				1F3A40A621D5972D0078E94C /* PeliculaDetailViewController.swift in Sources */,
 				1F0A4FB721D5534E00E99872 /* ActoresViewController.swift in Sources */,
 				1F0A4F8B21D54EE100E99872 /* Movie.swift in Sources */,
+				1F23F6F921D873A700C819A4 /* DirectorsList.swift in Sources */,
+				1F23F6F521D8733600C819A4 /* MoviesList.swift in Sources */,
 				1F0A4F7821D54E2B00E99872 /* PeliculasViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

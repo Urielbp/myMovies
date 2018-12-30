@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class PeliculaDetailViewControl: UIViewController, UITableViewDataSource {
+class PeliculaDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     //Model
     var m:Movie = Movie()
     
@@ -24,15 +24,14 @@ class PeliculaDetailViewControl: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        print("PeliculaDetailViewController loaded")
         directorsTable.dataSource = self
         castTable.dataSource = self
+        directorsTable.delegate = self
+        castTable.delegate = self
         
         directorsTable.register(UITableViewCell.self, forCellReuseIdentifier: "reuseMovieDetail1")
         castTable.register(UITableViewCell.self, forCellReuseIdentifier: "reuseMovieDetail2")
-        
-        
-        //actorsTable name changed, may get errors
-        //TODO: set delegate for both tables
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +41,44 @@ class PeliculaDetailViewControl: UIViewController, UITableViewDataSource {
         for c in m.Countries {
             countriesLabel.text?.append(contentsOf: c)
         }
+        //prepareForOutsideDetailView(forMovie: "Shrek")
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch tableView {
+        case self.castTable:
+            performSegue(withIdentifier: "actorDetailToPersonDetail", sender: self)
+            break
+        case self.directorsTable:
+            performSegue(withIdentifier: "directorDetailToPersonDetail", sender: self)
+            break
+        default:
+            print("Wrong table selected")
+            print("This shouldn't happen")
+            break
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailView = segue.destination as! PersonDetailViewController
+        
+        switch segue.identifier {
+        case "actorDetailToPersonDetail":
+            if let rowIndex = castTable.indexPathForSelectedRow?.row {
+                detailView.prepareForOutsideDetailView(forPerson: self.m.Cast[rowIndex], whichIs: 1)
+            }
+            break
+        case "directorDetailToPersonDetail":
+            if let rowIndex = directorsTable.indexPathForSelectedRow?.row {
+                detailView.prepareForOutsideDetailView(forPerson: self.m.Directors[rowIndex], whichIs: 2)
+            }
+            break
+        default:
+            print("Wrong segue identifier")
+            print("This shouldn't happen")
+            break
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -89,4 +125,9 @@ class PeliculaDetailViewControl: UIViewController, UITableViewDataSource {
             return cell
         }
     }
+    
+    public func prepareForOutsideDetailView(forMovie movie:String) {
+        m = MoviesList.shared.filter {$0.Title == movie}[0]
+    }
+    
 }

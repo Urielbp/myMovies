@@ -30,7 +30,7 @@ class PeliculasViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "peliculaDetailSegue") {
-            let detailView = segue.destination as! PeliculaDetailViewControl
+            let detailView = segue.destination as! PeliculaDetailViewController
             if let rowIndex = self.table.indexPathForSelectedRow {
                 detailView.m = movies[rowIndex.row]
             }
@@ -45,6 +45,7 @@ class PeliculasViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        print("PeliculasViewController loaded")
         table.dataSource = self
         table.delegate = self
         table.register(UITableViewCell.self, forCellReuseIdentifier: "reuseMovie")
@@ -60,7 +61,21 @@ class PeliculasViewController: UIViewController, UITableViewDataSource, UITableV
         //var filesList = listOfSandboxFilesIn(directory: documentsURL, withExtension: "json")
         //TODO: Check if files are in local Documents.
         //TODO: Move to Main controller
+        
+        //local
         let jsonURL = documentsFolderURL.appendingPathComponent("movies.json")
+        
+        //remote
+//        let jsonURL = URL(string: "localhost:3000/movies.json")
+        
+//        do {
+//            let jsonString = try String(contentsOf: jsonURL)
+//            print (jsonString)
+//        }
+//        catch {
+//            print ("Error decoding remote JSON file " + jsonURL.absoluteString)
+//            print (error)
+//        }
         let decoder = JSONDecoder()
         if let jsonData = fm.contents(atPath: jsonURL.path) {
             do {
@@ -74,8 +89,7 @@ class PeliculasViewController: UIViewController, UITableViewDataSource, UITableV
                 print (error)
             }
         }
-        
-        
+        MoviesList.shared = movies
     }
 
 

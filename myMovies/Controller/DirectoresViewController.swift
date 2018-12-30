@@ -31,7 +31,7 @@ class DirectoresViewController: UIViewController , UITableViewDataSource, UITabl
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "directorDetailSegue") {
-            let detailView = segue.destination as! PersonDetailViewConrtoller
+            let detailView = segue.destination as! PersonDetailViewController
             detailView.personType = 1
             if let rowIndex = self.table.indexPathForSelectedRow {
                 detailView.p = directors[rowIndex.row]
@@ -47,7 +47,7 @@ class DirectoresViewController: UIViewController , UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+//        print("DirectoresViewController loaded")
         table.dataSource = self
         table.delegate = self
         table.register(UITableViewCell.self, forCellReuseIdentifier: "reuseDirectors")
@@ -76,6 +76,7 @@ class DirectoresViewController: UIViewController , UITableViewDataSource, UITabl
                 print (error)
             }
         }
+        DirectorsList.shared = directors
     }
 
 
