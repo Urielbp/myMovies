@@ -22,26 +22,59 @@ class TabController: UITabBarController {
         let documentsFolderURL = documentsURL()
         let decoder = JSONDecoder()
         
-        //Local files
-        let moviesJsonURL = documentsFolderURL.appendingPathComponent("movies.json")
-        let actorsJsonURL = documentsFolderURL.appendingPathComponent("actors.json")
-        let directorsJsonURL = documentsFolderURL.appendingPathComponent("directors.json")
-        
-        
-        //Parsing movies.json
-        if let moviesJsonData = fm.contents(atPath: moviesJsonURL.path) {
+        //If local files are not available
+        let localFiles = listOfSandboxFilesIn(directory: documentsFolderURL, withExtension: "json")
+        if (localFiles.filter {$0.lastPathComponent == "movies.json"}.count != 0) {
+            //We have local movies.json, load the local files
+            print("We have local movies.json")
+            let localMoviesJsonURL = documentsFolderURL.appendingPathComponent("movies.json")
+            //Parsing movies.json
+            if let moviesJsonData = fm.contents(atPath: localMoviesJsonURL.path) {
+                do {
+                    let moviesData = try decoder.decode([Movie].self, from: moviesJsonData)
+                    for m in moviesData {
+                        movies.append(m)
+                    }
+                }
+                catch {
+                    //TODO: NotifyUser all over
+                    print ("Error decoding JSON file " + localMoviesJsonURL.absoluteString)
+                    print (error)
+                }
+            }
+            MoviesList.shared = movies
+        } else {
+            //We don't have local movie.json, load from the remote URL
+            let remoteMoviesURL = URL(string: "http://192.168.0.23:3000/movies")
+            print("We don't have movies.json")
             do {
-                let moviesData = try decoder.decode([Movie].self, from: moviesJsonData)
-                for m in moviesData {
-                    movies.append(m)
+                let moviesRemoteData = try Data(contentsOf: remoteMoviesURL!)
+                do {
+                    let moviesData = try decoder.decode([Movie].self, from: moviesRemoteData)
+                    for m in moviesData {
+                        movies.append(m)
+                    }
+                }
+                catch {
+                    print ("Error decoding JSON file " + (remoteMoviesURL?.absoluteString)!)
+                    print (error)
                 }
             }
             catch {
-                print ("Error decoding JSON file " + moviesJsonURL.absoluteString)
-                print (error)
+                print("Errors parsing remote movies JSON file")
+                print(error)
             }
+            MoviesList.shared = movies
         }
-        MoviesList.shared = movies
+        
+
+        
+        
+        
+        
+        
+        let actorsJsonURL = documentsFolderURL.appendingPathComponent("actors.json")
+        let directorsJsonURL = documentsFolderURL.appendingPathComponent("directors.json")
         
         //Parsing Actors.json
         if let actorsJsonData = fm.contents(atPath: actorsJsonURL.path) {
