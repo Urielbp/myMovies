@@ -30,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         //TODO: Save shared data into json files
-        let fm = FileManager.default
         let documentsFolderURL = documentsURL()
         let encoder = JSONEncoder()
         
@@ -40,10 +39,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 let moviesJsonData = try encoder.encode(MoviesList.shared)
                 try moviesJsonData.write(to: localMoviesJsonURL)
-                print("movies.json written successfully")
+                //print("DEBUG>>Saving App data to local movie.json")
             }
             catch {
                 print("Error writing to local movies.json")
+                print(error)
+            }
+        }
+        
+        if (localFiles.filter {$0.lastPathComponent == "actors.json"}.count == 0) {
+            let localActorsJsonURL = documentsFolderURL.appendingPathComponent("actors.json")
+            do {
+                let actorsJsonData = try encoder.encode(ActorsList.shared)
+                try actorsJsonData.write(to: localActorsJsonURL)
+                //print("DEBUG>>Saving App data to local actors.json")
+            }
+            catch {
+                print("Error writing to local actors.json")
+                print(error)
+            }
+        }
+        
+        if (localFiles.filter {$0.lastPathComponent == "directors.json"}.count == 0) {
+            let localDirectorsJsonURL = documentsFolderURL.appendingPathComponent("directors.json")
+            do {
+                let directorsJsonData = try encoder.encode(DirectorsList.shared)
+                try directorsJsonData.write(to: localDirectorsJsonURL)
+                //print("DEBUG>>Saving App data to local directors.json")
+            }
+            catch {
+                print("Error writing to local directors.json")
                 print(error)
             }
         }

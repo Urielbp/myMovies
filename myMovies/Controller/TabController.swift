@@ -22,13 +22,14 @@ class TabController: UITabBarController {
         let documentsFolderURL = documentsURL()
         let decoder = JSONDecoder()
         
-        //If local files are not available
+        //Getting list of local json files
         let localFiles = listOfSandboxFilesIn(directory: documentsFolderURL, withExtension: "json")
+        
+        //Movies
         if (localFiles.filter {$0.lastPathComponent == "movies.json"}.count != 0) {
-            //We have local movies.json, load the local files
-            print("We have local movies.json")
+            //We have local json, load the local files
+            //print("DEBUG>>We have local movie.json")
             let localMoviesJsonURL = documentsFolderURL.appendingPathComponent("movies.json")
-            //Parsing movies.json
             if let moviesJsonData = fm.contents(atPath: localMoviesJsonURL.path) {
                 do {
                     let moviesData = try decoder.decode([Movie].self, from: moviesJsonData)
@@ -44,9 +45,9 @@ class TabController: UITabBarController {
             }
             MoviesList.shared = movies
         } else {
-            //We don't have local movie.json, load from the remote URL
+            //We don't have local json, load from the remote URL
+            //print("DEBUG>>We don't have local movie.json")
             let remoteMoviesURL = URL(string: "http://192.168.0.23:3000/movies")
-            print("We don't have movies.json")
             do {
                 let moviesRemoteData = try Data(contentsOf: remoteMoviesURL!)
                 do {
@@ -67,43 +68,89 @@ class TabController: UITabBarController {
             MoviesList.shared = movies
         }
         
-
-        
-        
-        
-        
-        
-        let actorsJsonURL = documentsFolderURL.appendingPathComponent("actors.json")
-        let directorsJsonURL = documentsFolderURL.appendingPathComponent("directors.json")
-        
-        //Parsing Actors.json
-        if let actorsJsonData = fm.contents(atPath: actorsJsonURL.path) {
+        //Actors
+        if (localFiles.filter {$0.lastPathComponent == "actors.json"}.count != 0){
+            //We have local json, load the local files
+            //print("DEBUG>>We have local actors.json")
+            let actorsJsonURL = documentsFolderURL.appendingPathComponent("actors.json")
+            if let actorsJsonData = fm.contents(atPath: actorsJsonURL.path) {
+                do {
+                    let actorsData = try decoder.decode([Person].self, from: actorsJsonData)
+                    for p in actorsData {
+                        actors.append(p)
+                    }
+                }
+                catch {
+                    print ("Error decoding JSON file " + actorsJsonURL.absoluteString)
+                    print (error)
+                }
+            }
+            ActorsList.shared = actors
+        } else {
+            //We don't have local json, load from the remote URL
+            //print("DEBUG>>We don't have local actors.json")
+            let remoteActorsURL = URL(string: "http://192.168.0.23:3000/actors")
             do {
-                let actorsData = try decoder.decode([Person].self, from: actorsJsonData)
-                for p in actorsData {
-                    actors.append(p)
+                let actorsRemoteData = try Data(contentsOf: remoteActorsURL!)
+                do {
+                    let actorsData = try decoder.decode([Person].self, from: actorsRemoteData)
+                    for p in actorsData {
+                        actors.append(p)
+                    }
+                }
+                catch {
+                    print ("Error decoding JSON file " + (remoteActorsURL?.absoluteString)!)
+                    print (error)
                 }
             }
             catch {
-                print ("Error decoding JSON file " + actorsJsonURL.absoluteString)
-                print (error)
+                print("Errors parsing remote movies JSON file")
+                print(error)
             }
+            ActorsList.shared = actors
         }
-        ActorsList.shared = actors
         
-        //Parsing directors.json
-        if let directorsJsonData = fm.contents(atPath: directorsJsonURL.path) {
+        
+        //Directors
+        if (localFiles.filter {$0.lastPathComponent == "directors.json"}.count != 0){
+            //We have local json, load the local files
+            //print("DEBUG>>We have local directors.json")
+            let directorsJsonURL = documentsFolderURL.appendingPathComponent("directors.json")
+            if let directorsJsonData = fm.contents(atPath: directorsJsonURL.path) {
+                do {
+                    let diretorsData = try decoder.decode([Person].self, from: directorsJsonData)
+                    for p in diretorsData {
+                        directors.append(p)
+                    }
+                }
+                catch {
+                    print ("Error decoding JSON file " + directorsJsonURL.absoluteString)
+                    print (error)
+                }
+            }
+            DirectorsList.shared = directors
+        } else {
+            //We don't have local json, load from the remote URL
+            //print("DEBUG>>We don't have local directors.json")
+            let remoteDirectorsURL = URL(string: "http://192.168.0.23:3000/directors")
             do {
-                let diretorsData = try decoder.decode([Person].self, from: directorsJsonData)
-                for p in diretorsData {
-                    directors.append(p)
+                let directorsRemoteData = try Data(contentsOf: remoteDirectorsURL!)
+                do {
+                    let directorsData = try decoder.decode([Person].self, from: directorsRemoteData)
+                    for p in directorsData {
+                        directors.append(p)
+                    }
+                }
+                catch {
+                    print ("Error decoding JSON file " + (remoteDirectorsURL?.absoluteString)!)
+                    print (error)
                 }
             }
             catch {
-                print ("Error decoding JSON file " + directorsJsonURL.absoluteString)
-                print (error)
+                print("Errors parsing remote movies JSON file")
+                print(error)
             }
+            DirectorsList.shared = directors
         }
-        DirectorsList.shared = directors
     }
 }
