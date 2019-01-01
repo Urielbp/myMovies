@@ -8,10 +8,41 @@
 
 import UIKit
 
-class DirectoresViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
+class DirectoresViewController: UIViewController , UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
     //Outlets
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var orderByPickerView: UIPickerView!
     var directors:[Person] = []
+    let pickerViewOptions:[String] = ["Nombre", "Año de nacimiento"]
+    
+    //Mark: UIPickerView
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerViewOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerViewOptions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch row {
+        case 0:
+            directors.sort(by: orderPersonByName)
+            table.reloadData()
+            break
+        case 1:
+            directors.sort(by: orderPersonByBirthYear)
+            table.reloadData()
+            break
+        default:
+            print("This shouldn't happen")
+        }
+    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return directors.count
@@ -47,37 +78,16 @@ class DirectoresViewController: UIViewController , UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print("DirectoresViewController loaded")
         table.dataSource = self
         table.delegate = self
         table.register(UITableViewCell.self, forCellReuseIdentifier: "reuseDirectors")
+        orderByPickerView.dataSource = self
+        orderByPickerView.delegate = self
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         directors = DirectorsList.shared
-//        let fm = FileManager.default
-        
-        //String(contentsOf: URL)
-        //para descargar el contenido de la URL
-        
-//        let documentsFolderURL = documentsURL()
-//        //var filesList = listOfSandboxFilesIn(directory: documentsURL, withExtension: "json")
-//        //TODO: Check if files are in local Documents.
-//        //TODO: Move to Main controller
-//        let jsonURL = documentsFolderURL.appendingPathComponent("directors.json")
-//        let decoder = JSONDecoder()
-//        if let jsonData = fm.contents(atPath: jsonURL.path) {
-//            do {
-//                let directorsData = try decoder.decode([Person].self, from: jsonData)
-//                for d in directorsData {
-//                    directors.append(d)
-//                }
-//            }
-//            catch {
-//                print ("Error decoding JSON file " + jsonURL.absoluteString)
-//                print (error)
-//            }
-//        }
-//        DirectorsList.shared = directors
+        //By default, ordered by names
+        directors.sort(by: orderPersonByName)
     }
 
 

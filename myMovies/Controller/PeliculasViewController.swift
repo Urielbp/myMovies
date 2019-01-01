@@ -8,10 +8,53 @@
 
 import UIKit
 
-class PeliculasViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PeliculasViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+    //Outlets and local variables
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var orderByPickerView: UIPickerView!
     var movies:[Movie] = []
+    let pickerViewOptions:[String] = ["Título", "Año", "Dirección", "País"]
     
+    
+    //MARK: UIPickerView
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerViewOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerViewOptions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch row {
+        case 0:
+            movies.sort(by: orderMovieByTitle)
+            table.reloadData()
+            break
+        case 1:
+            movies.sort(by: orderMovieByYear)
+            table.reloadData()
+            break
+        case 2:
+            movies.sort(by: orderMovieByDirector)
+            table.reloadData()
+            break
+        case 3:
+            movies.sort(by: orderMovieByCountry)
+            table.reloadData()
+            break
+        default:
+            print("This shouldn't happen")
+        }
+    }
+    
+
+    
+    //MARK: UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
@@ -28,6 +71,7 @@ class PeliculasViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     
+    //MARK: Segue preparation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "peliculaDetailSegue") {
             let detailView = segue.destination as! PeliculaDetailViewController
@@ -42,56 +86,20 @@ class PeliculasViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
 
-    
+    //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print("PeliculasViewController loaded")
         table.dataSource = self
         table.delegate = self
         table.register(UITableViewCell.self, forCellReuseIdentifier: "reuseMovie")
+        orderByPickerView.dataSource = self
+        orderByPickerView.delegate = self
         movies = MoviesList.shared
-//        var m = Movie()
-//        m.Title = "Shrek"
-//        movies.append(m)
-//        let fm = FileManager.default
-//
-//        //String(contentsOf: URL)
-//        //para descargar el contenido de la URL
-//
-//        let documentsFolderURL = documentsURL()
-//        //var filesList = listOfSandboxFilesIn(directory: documentsURL, withExtension: "json")
-//        //TODO: Check if files are in local Documents.
-//        //TODO: Move to Main controller
-//
-//        //local
-//        let jsonURL = documentsFolderURL.appendingPathComponent("movies.json")
-//
-//        //remote
-////        let jsonURL = URL(string: "localhost:3000/movies.json")
-//
-////        do {
-////            let jsonString = try String(contentsOf: jsonURL)
-////            print (jsonString)
-////        }
-////        catch {
-////            print ("Error decoding remote JSON file " + jsonURL.absoluteString)
-////            print (error)
-////        }
-//        let decoder = JSONDecoder()
-//        if let jsonData = fm.contents(atPath: jsonURL.path) {
-//            do {
-//                let moviesData = try decoder.decode([Movie].self, from: jsonData)
-//                for m in moviesData {
-//                    movies.append(m)
-//                }
-//            }
-//            catch {
-//                print ("Error decoding JSON file " + jsonURL.absoluteString)
-//                print (error)
-//            }
-//        }
-//        MoviesList.shared = movies
+        //By default, ordered by titles
+        movies.sort(by: orderMovieByTitle)
     }
+    
+
 
 
 }

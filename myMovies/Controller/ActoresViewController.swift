@@ -8,11 +8,41 @@
 
 import UIKit
 
-class ActoresViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ActoresViewController: UIViewController, UITableViewDataSource, UITableViewDelegate , UIPickerViewDataSource, UIPickerViewDelegate{
     
     //Outlet
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var orderByPickerView: UIPickerView!
     var actors:[Person] = []
+    let pickerViewOptions:[String] = ["Nombre", "Año de nacimiento"]
+    
+    //Mark: UIPickerView
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerViewOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerViewOptions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        switch row {
+        case 0:
+            actors.sort(by: orderPersonByName)
+            table.reloadData()
+            break
+        case 1:
+            actors.sort(by: orderPersonByBirthYear)
+            table.reloadData()
+            break
+        default:
+            print("This shouldn't happen")
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return actors.count
@@ -50,29 +80,13 @@ class ActoresViewController: UIViewController, UITableViewDataSource, UITableVie
         table.dataSource = self
         table.delegate = self
         table.register(UITableViewCell.self, forCellReuseIdentifier: "reuseActors")
+        orderByPickerView.dataSource = self
+        orderByPickerView.delegate = self
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         actors = ActorsList.shared
-//        let fm = FileManager.default
-//        let documentsFolderURL = documentsURL()
-//        //var filesList = listOfSandboxFilesIn(directory: documentsURL, withExtension: "json")
-//        //TODO: Check if files are in local Documents.
-//        //TODO: Move to Main controller
-//        let jsonURL = documentsFolderURL.appendingPathComponent("actors.json")
-//        let decoder = JSONDecoder()
-//        if let jsonData = fm.contents(atPath: jsonURL.path) {
-//            do {
-//                let actorsData = try decoder.decode([Person].self, from: jsonData)
-//                for a in actorsData {
-//                    actors.append(a)
-//                }
-//            }
-//            catch {
-//                print ("Error decoding JSON file " + jsonURL.absoluteString)
-//                print (error)
-//            }
-//        }
-//        ActorsList.shared = actors
+        //By default, ordered by names
+        actors.sort(by: orderPersonByName)
     }
     
     

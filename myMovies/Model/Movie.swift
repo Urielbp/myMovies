@@ -9,17 +9,6 @@
 import Foundation
 import UIKit
 
-//struct Movie {
-//    var Title:String
-//    var Year:Int
-//    var Runtime:Int
-//    var Countries:[String]
-//    var Director:[Person]?
-//    var Cast:[Person]?
-//    var Trailer:String?
-//
-//}
-
 struct Movie : Codable {
     var Title:String = ""
     var Year:Int = -1
@@ -28,5 +17,22 @@ struct Movie : Codable {
     var Directors:[String] = [""]
     var Cast:[String] = [""]
     var Trailer:String = ""
-    
 }
+
+//MARK: Ordering functions
+func orderMovieByTitle(a: Movie, b: Movie) -> Bool {
+    return (a.Title < b.Title)
+}
+
+func orderMovieByYear(a: Movie, b: Movie) -> Bool {
+    return (a.Year < b.Year)
+}
+
+func orderMovieByDirector(a: Movie, b: Movie) -> Bool {
+    return (a.Directors[0] < b.Directors[0])
+}
+
+func orderMovieByCountry(a: Movie, b: Movie) -> Bool {
+    return (a.Countries[0] < b.Countries[0])
+}
+

@@ -19,7 +19,6 @@ class PersonDetailViewController : UIViewController, UITableViewDataSource , UIT
     var p:Person = Person()
     var formatter = DateFormatter()
     var personType:Int = -1
-    //var selectedMovie = Movie()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +30,6 @@ class PersonDetailViewController : UIViewController, UITableViewDataSource , UIT
     
     override func viewWillAppear(_ animated: Bool) {
         nameLabel.text = p.Name
-        //bdayLabel.text = formatter.string(from: p.Birthday)
         bdayLabel.text = p.Birthday
         photoUIImageView.image = UIImage(named: p.Name + ".jpg")
         //TODO: Download the file in the p.Photo URL if the local file doesn't exist
@@ -40,14 +38,12 @@ class PersonDetailViewController : UIViewController, UITableViewDataSource , UIT
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //selectedMovie = tableView[indexPath.row]
         performSegue(withIdentifier: "personDetailToMovieDetail", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "personDetailToMovieDetail") {
             let detailView = segue.destination as! PeliculaDetailViewController
-            //let pvtSender = sender as! PersonDetailViewController
             if let rowIndex = table.indexPathForSelectedRow?.row {
                 detailView.prepareForOutsideDetailView(forMovie: self.p.Movies[rowIndex])
             }

@@ -24,7 +24,6 @@ class PeliculaDetailViewController: UIViewController, UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print("PeliculaDetailViewController loaded")
         directorsTable.dataSource = self
         castTable.dataSource = self
         directorsTable.delegate = self
@@ -41,8 +40,6 @@ class PeliculaDetailViewController: UIViewController, UITableViewDataSource, UIT
         for c in m.Countries {
             countriesLabel.text?.append(contentsOf: c)
         }
-        //prepareForOutsideDetailView(forMovie: "Shrek")
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
