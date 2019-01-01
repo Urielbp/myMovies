@@ -17,22 +17,24 @@ struct Movie : Codable {
     var Directors:[String] = [""]
     var Cast:[String] = [""]
     var Trailer:String = ""
+    
+    //MARK: Ordering functions
+    static func sortByTitle(a: Movie, b: Movie) -> Bool {
+        return (a.Title < b.Title)
+    }
+    
+    static func sortByYear(a: Movie, b: Movie) -> Bool {
+        return (a.Year < b.Year)
+    }
+    
+    static func sortByDirector(a: Movie, b: Movie) -> Bool {
+        return (a.Directors[0] < b.Directors[0])
+    }
+    
+    static func sortByCountry(a: Movie, b: Movie) -> Bool {
+        return (a.Countries[0] < b.Countries[0])
+    }
 }
 
-//MARK: Ordering functions
-func orderMovieByTitle(a: Movie, b: Movie) -> Bool {
-    return (a.Title < b.Title)
-}
 
-func orderMovieByYear(a: Movie, b: Movie) -> Bool {
-    return (a.Year < b.Year)
-}
-
-func orderMovieByDirector(a: Movie, b: Movie) -> Bool {
-    return (a.Directors[0] < b.Directors[0])
-}
-
-func orderMovieByCountry(a: Movie, b: Movie) -> Bool {
-    return (a.Countries[0] < b.Countries[0])
-}
 

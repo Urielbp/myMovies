@@ -38,7 +38,6 @@ class TabController: UITabBarController {
                     }
                 }
                 catch {
-                    //TODO: NotifyUser all over
                     print ("Error decoding JSON file " + localMoviesJsonURL.absoluteString)
                     print (error)
                 }

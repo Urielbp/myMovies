@@ -31,11 +31,11 @@ class DirectoresViewController: UIViewController , UITableViewDataSource, UITabl
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch row {
         case 0:
-            directors.sort(by: orderPersonByName)
+            directors.sort(by: Person.sortByName)
             table.reloadData()
             break
         case 1:
-            directors.sort(by: orderPersonByBirthYear)
+            directors.sort(by: Person.sortByBirthYear)
             table.reloadData()
             break
         default:
@@ -86,8 +86,8 @@ class DirectoresViewController: UIViewController , UITableViewDataSource, UITabl
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         directors = DirectorsList.shared
-        //By default, ordered by names
-        directors.sort(by: orderPersonByName)
+        //By default, sorted by names
+        directors.sort(by: Person.sortByName)
     }
 
 

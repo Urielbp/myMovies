@@ -14,15 +14,17 @@ struct Person : Codable {
     var Birthday:String = ""
     var Photo:String = ""
     var Movies:[String] = []
+    
+    //MARK: Sorting functions
+    static func sortByName(a: Person, b: Person) -> Bool {
+        return (a.Name < b.Name)
+    }
+    
+    static func sortByBirthYear(a: Person, b: Person) -> Bool {
+        let aBirthYear = a.Birthday.components(separatedBy: "/")
+        let bBirthYear = b.Birthday.components(separatedBy: "/")
+        return (aBirthYear.last! < bBirthYear.last!)
+    }
 }
 
-//MARK: Ordering functions
-func orderPersonByName(a: Person, b: Person) -> Bool {
-    return (a.Name < b.Name)
-}
 
-func orderPersonByBirthYear(a: Person, b: Person) -> Bool {
-    let aBirthYear = a.Birthday.components(separatedBy: "/")
-    let bBirthYear = b.Birthday.components(separatedBy: "/")
-    return (aBirthYear.last! < bBirthYear.last!)
-}

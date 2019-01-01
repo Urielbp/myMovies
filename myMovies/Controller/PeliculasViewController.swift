@@ -32,27 +32,25 @@ class PeliculasViewController: UIViewController, UITableViewDataSource, UITableV
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch row {
         case 0:
-            movies.sort(by: orderMovieByTitle)
+            movies.sort(by: Movie.sortByTitle)
             table.reloadData()
             break
         case 1:
-            movies.sort(by: orderMovieByYear)
+            movies.sort(by: Movie.sortByYear)
             table.reloadData()
             break
         case 2:
-            movies.sort(by: orderMovieByDirector)
+            movies.sort(by: Movie.sortByDirector)
             table.reloadData()
             break
         case 3:
-            movies.sort(by: orderMovieByCountry)
+            movies.sort(by: Movie.sortByCountry)
             table.reloadData()
             break
         default:
             print("This shouldn't happen")
         }
     }
-    
-
     
     //MARK: UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,8 +93,9 @@ class PeliculasViewController: UIViewController, UITableViewDataSource, UITableV
         orderByPickerView.dataSource = self
         orderByPickerView.delegate = self
         movies = MoviesList.shared
-        //By default, ordered by titles
-        movies.sort(by: orderMovieByTitle)
+        //By default, sorted by titles
+        movies.sort(by: Movie.sortByTitle)
+        //notifyUser(self, alertTitle: "Title", alertMessage: "Message", runOnOK: {_ in })
     }
     
 

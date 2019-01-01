@@ -32,11 +32,11 @@ class ActoresViewController: UIViewController, UITableViewDataSource, UITableVie
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch row {
         case 0:
-            actors.sort(by: orderPersonByName)
+            actors.sort(by: Person.sortByName)
             table.reloadData()
             break
         case 1:
-            actors.sort(by: orderPersonByBirthYear)
+            actors.sort(by: Person.sortByBirthYear)
             table.reloadData()
             break
         default:
@@ -85,8 +85,8 @@ class ActoresViewController: UIViewController, UITableViewDataSource, UITableVie
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         actors = ActorsList.shared
-        //By default, ordered by names
-        actors.sort(by: orderPersonByName)
+        //By default, sorted by names
+        actors.sort(by: Person.sortByName)
     }
     
     
