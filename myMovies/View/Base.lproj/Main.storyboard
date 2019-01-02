@@ -436,7 +436,7 @@
         <scene sceneID="Oom-AO-w4g">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="byk-Po-eox" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Películas" id="kT0-wq-Iat"/>
+                    <tabBarItem key="tabBarItem" title="Películas" image="movie" selectedImage="movie" id="kT0-wq-Iat"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KBf-sc-78A">
                         <rect key="frame" x="0.0" y="20" width="768" height="50"/>
@@ -455,7 +455,7 @@
         <scene sceneID="A6N-9C-J4e">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DLc-kY-6e0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Directores" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Directores" image="director" selectedImage="director" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="chE-U2-2YP">
                         <rect key="frame" x="0.0" y="20" width="768" height="50"/>
@@ -474,7 +474,7 @@
         <scene sceneID="9zV-5D-MjT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gjp-95-yUp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Actores" image="second" id="dbG-fn-lTc"/>
+                    <tabBarItem key="tabBarItem" title="Actores" image="actor" selectedImage="actor" id="dbG-fn-lTc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qf6-DY-Scp">
                         <rect key="frame" x="0.0" y="20" width="768" height="50"/>
@@ -491,7 +491,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="second" width="30" height="30"/>
+        <image name="actor" width="24" height="24"/>
+        <image name="director" width="24" height="24"/>
+        <image name="movie" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6ek-Ah-kFC"/>

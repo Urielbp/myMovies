@@ -179,7 +179,6 @@ class TabController: UITabBarController {
                         directors.append(p)
                         let photoIsLocal =  localFiles.filter {p.Name == $0.lastPathComponent.components(separatedBy: ".")[0]}
                         if (photoIsLocal.count == 0) {
-                            print("Image is not downloaded for \(p.Name)")
                             //Download image file
                             DispatchQueue.global().async {
                                 let localURL = documentsFolderURL.appendingPathComponent(p.Name + ".jpg")
