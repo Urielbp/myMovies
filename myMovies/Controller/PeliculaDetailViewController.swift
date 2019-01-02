@@ -8,10 +8,12 @@
 
 import Foundation
 import UIKit
+import AVKit
 
 class PeliculaDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     //Model
     var m:Movie = Movie()
+    var documentsFolderURL = documentsURL()
     
     //Outlets
     @IBOutlet weak var titleLabel: UILabel!
@@ -20,6 +22,7 @@ class PeliculaDetailViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var countriesLabel: UILabel!
     @IBOutlet weak var directorsTable: UITableView!
     @IBOutlet weak var castTable: UITableView!
+    @IBOutlet weak var trailerImage: UIImageView!
     
     
     override func viewDidLoad() {
@@ -28,9 +31,9 @@ class PeliculaDetailViewController: UIViewController, UITableViewDataSource, UIT
         castTable.dataSource = self
         directorsTable.delegate = self
         castTable.delegate = self
-        
         directorsTable.register(UITableViewCell.self, forCellReuseIdentifier: "reuseMovieDetail1")
         castTable.register(UITableViewCell.self, forCellReuseIdentifier: "reuseMovieDetail2")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +43,10 @@ class PeliculaDetailViewController: UIViewController, UITableViewDataSource, UIT
         for c in m.Countries {
             countriesLabel.text?.append(contentsOf: c)
         }
+        
+        let imagePath = documentsFolderURL.appendingPathComponent(m.Title + "__trailer.png").path
+        trailerImage.image = UIImage(contentsOfFile: imagePath)
+        trailerImage.contentMode = .scaleAspectFit        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -125,6 +132,19 @@ class PeliculaDetailViewController: UIViewController, UITableViewDataSource, UIT
     
     public func prepareForOutsideDetailView(forMovie movie:String) {
         m = MoviesList.shared.filter {$0.Title == movie}[0]
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch :UITouch? = touches.first
+        if (touch?.view == trailerImage){
+            if let videoURL = URL(string: m.Trailer){
+                let player = AVPlayer(url: videoURL)
+                let playerViewController = AVPlayerViewController()
+                playerViewController.player = player
+                present(playerViewController, animated: true, completion: {playerViewController.player?.play()})
+            }
+        }
+        super.touchesEnded(touches, with: event)
     }
     
 }

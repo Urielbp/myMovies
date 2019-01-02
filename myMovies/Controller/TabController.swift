@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVKit
 
 class TabController: UITabBarController {
     
@@ -53,6 +54,28 @@ class TabController: UITabBarController {
                     let moviesData = try decoder.decode([Movie].self, from: moviesRemoteData)
                     for m in moviesData {
                         movies.append(m)
+                        let thumbnailIsLocal =  localFiles.filter {m.Title + "__trailer" == $0.lastPathComponent.components(separatedBy: ".")[0]}
+                        if (thumbnailIsLocal.count == 0) {
+                            //Download thumbanail
+                            DispatchQueue.global().async {
+                                let localURL = documentsFolderURL.appendingPathComponent(m.Title + "__trailer.png")
+                                if let videoURL = URL(string: m.Trailer) {
+                                    let asset = AVURLAsset(url: videoURL)
+                                    let imageGenerator = AVAssetImageGenerator(asset: asset)
+                                    do {
+                                        let thumbnail = try imageGenerator.copyCGImage(at: CMTimeMakeWithSeconds(10, preferredTimescale: 24), actualTime: nil)
+                                        let thumbUIImage = UIImage(cgImage: thumbnail)
+                                        if let imageData = thumbUIImage.jpegData(compressionQuality: 1.0){
+                                            try imageData.write(to: localURL)
+                                        }
+                                    }
+                                    catch {
+                                        print("Error getting thumbnail")
+                                        print(error)
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
                 catch {
@@ -105,7 +128,7 @@ class TabController: UITabBarController {
                                     try imageData.write(to: localURL)
                                 }
                                 catch {
-                                    print("Could not download \(p.Photo)")
+                                    print("Could not download \(p.Photo) photo")
                                     print(error)
                                 }
                                 
@@ -165,7 +188,7 @@ class TabController: UITabBarController {
                                     try imageData.write(to: localURL)
                                 }
                                 catch {
-                                    print("Could not download \(p.Name) image file")
+                                    print("Could not download \(p.Name) photo")
                                     print(error)
                                 }
                                 
