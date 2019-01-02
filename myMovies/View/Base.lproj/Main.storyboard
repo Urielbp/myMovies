@@ -286,7 +286,7 @@
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NTZ-2z-fe0">
-                                <rect key="frame" x="20" y="558" width="728" height="396"/>
+                                <rect key="frame" x="20" y="588" width="728" height="366"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reuseDirectorDetail" id="cf8-6J-Ttt">
@@ -302,6 +302,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyI-g9-228">
+                                <rect key="frame" x="20" y="558" width="728" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -309,7 +315,8 @@
                             <constraint firstItem="94g-No-eVy" firstAttribute="leading" secondItem="kBQ-65-DB3" secondAttribute="leading" constant="20" id="K5V-Ei-b1s"/>
                             <constraint firstItem="kBQ-65-DB3" firstAttribute="trailing" secondItem="Tme-Dc-a1h" secondAttribute="trailing" constant="20" id="Kte-Cm-UYN"/>
                             <constraint firstItem="94g-No-eVy" firstAttribute="top" secondItem="Tme-Dc-a1h" secondAttribute="bottom" constant="8" id="THJ-iK-nuP"/>
-                            <constraint firstItem="NTZ-2z-fe0" firstAttribute="top" secondItem="nwa-a6-dkg" secondAttribute="bottom" constant="8" id="czm-Hn-X4c"/>
+                            <constraint firstItem="kBQ-65-DB3" firstAttribute="trailing" secondItem="nyI-g9-228" secondAttribute="trailing" constant="20" id="cM7-yS-yHK"/>
+                            <constraint firstItem="NTZ-2z-fe0" firstAttribute="top" secondItem="nwa-a6-dkg" secondAttribute="bottom" constant="38" id="czm-Hn-X4c"/>
                             <constraint firstItem="nwa-a6-dkg" firstAttribute="top" secondItem="94g-No-eVy" secondAttribute="bottom" constant="16" id="gtL-z2-9f4"/>
                             <constraint firstItem="Tme-Dc-a1h" firstAttribute="leading" secondItem="kBQ-65-DB3" secondAttribute="leading" constant="20" id="osn-qi-dqy"/>
                             <constraint firstItem="kBQ-65-DB3" firstAttribute="trailing" secondItem="94g-No-eVy" secondAttribute="trailing" constant="20" id="ouF-S7-y5M"/>
@@ -317,6 +324,8 @@
                             <constraint firstItem="kBQ-65-DB3" firstAttribute="trailing" secondItem="NTZ-2z-fe0" secondAttribute="trailing" constant="20" id="qlV-6y-QOd"/>
                             <constraint firstItem="NTZ-2z-fe0" firstAttribute="leading" secondItem="kBQ-65-DB3" secondAttribute="leading" constant="20" id="sMD-KL-jnd"/>
                             <constraint firstItem="Tme-Dc-a1h" firstAttribute="top" secondItem="kBQ-65-DB3" secondAttribute="top" id="vvN-pq-Vbj"/>
+                            <constraint firstItem="nyI-g9-228" firstAttribute="top" secondItem="nwa-a6-dkg" secondAttribute="bottom" constant="8" id="yId-Ub-2Bh"/>
+                            <constraint firstItem="nyI-g9-228" firstAttribute="leading" secondItem="kBQ-65-DB3" secondAttribute="leading" constant="20" id="zKr-tF-N3p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kBQ-65-DB3"/>
                     </view>
@@ -324,6 +333,7 @@
                         <outlet property="bdayLabel" destination="94g-No-eVy" id="aka-Mw-Ydu"/>
                         <outlet property="nameLabel" destination="Tme-Dc-a1h" id="twW-kC-rU1"/>
                         <outlet property="photoUIImageView" destination="nwa-a6-dkg" id="okI-Bp-P1K"/>
+                        <outlet property="roleLabel" destination="nyI-g9-228" id="SZA-Ye-as3"/>
                         <outlet property="table" destination="NTZ-2z-fe0" id="GGv-c7-x6M"/>
                     </connections>
                 </viewController>
@@ -376,7 +386,7 @@
                                 </prototypes>
                             </tableView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEh-4w-Jgz">
-                                <rect key="frame" x="428" y="70" width="64" height="82"/>
+                                <rect key="frame" x="428" y="70" width="320" height="82"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="tgs-3y-VgF"/>
                                 </constraints>

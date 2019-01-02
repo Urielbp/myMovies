@@ -61,14 +61,14 @@ class PeliculaDetailViewController: UIViewController, UITableViewDataSource, UIT
         let detailView = segue.destination as! PersonDetailViewController
         
         switch segue.identifier {
-        case "actorDetailToPersonDetail":
-            if let rowIndex = castTable.indexPathForSelectedRow?.row {
-                detailView.prepareForOutsideDetailView(forPerson: self.m.Cast[rowIndex], whichIs: 1)
-            }
-            break
         case "directorDetailToPersonDetail":
             if let rowIndex = directorsTable.indexPathForSelectedRow?.row {
-                detailView.prepareForOutsideDetailView(forPerson: self.m.Directors[rowIndex], whichIs: 2)
+                detailView.prepareForOutsideDetailView(forPerson: self.m.Directors[rowIndex], whichIs: 1)
+            }
+            break
+        case "actorDetailToPersonDetail":
+            if let rowIndex = castTable.indexPathForSelectedRow?.row {
+                detailView.prepareForOutsideDetailView(forPerson: self.m.Cast[rowIndex], whichIs: 2)
             }
             break
         default:

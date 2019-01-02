@@ -15,6 +15,7 @@ class PersonDetailViewController : UIViewController, UITableViewDataSource , UIT
     @IBOutlet weak var bdayLabel: UILabel!
     @IBOutlet weak var photoUIImageView: UIImageView!
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var roleLabel: UILabel!
     
     var p:Person = Person()
     var formatter = DateFormatter()
@@ -35,6 +36,14 @@ class PersonDetailViewController : UIViewController, UITableViewDataSource , UIT
         photoUIImageView.contentMode = .scaleAspectFit
         nameLabel.text = p.Name
         bdayLabel.text = p.Birthday
+        switch personType {
+        case 1:
+            roleLabel.text = "Filmografía como director:"
+        case 2:
+            roleLabel.text = "Filmografía como actor:"
+        default:
+            print("This shouldn't happen")
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -69,12 +78,14 @@ class PersonDetailViewController : UIViewController, UITableViewDataSource , UIT
     public func prepareForOutsideDetailView(forPerson person: String, whichIs type: Int) {
         switch type {
         case 1:
-            //Actor
-            p = ActorsList.shared.filter {$0.Name == person}[0]
-            break
-        case 2:
             //Director
             p = DirectorsList.shared.filter {$0.Name == person}[0]
+            personType = 1
+            break
+        case 2:
+            //Actor
+            p = ActorsList.shared.filter {$0.Name == person}[0]
+            personType = 2
             break
         default:
             print("Unidentified type for Person")
