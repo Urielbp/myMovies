@@ -23,7 +23,7 @@ class TabController: UITabBarController {
         let decoder = JSONDecoder()
         
         //Getting list of local json files
-        let localFiles = listOfSandboxFilesIn(directory: documentsFolderURL, withExtension: "json")
+        let localFiles = listOfSandboxFilesIn(directory: documentsFolderURL, withExtension: "*")
         
         //Movies
         if (localFiles.filter {$0.lastPathComponent == "movies.json"}.count != 0) {
@@ -95,6 +95,22 @@ class TabController: UITabBarController {
                     let actorsData = try decoder.decode([Person].self, from: actorsRemoteData)
                     for p in actorsData {
                         actors.append(p)
+                        let photoIsLocal =  localFiles.filter {p.Name == $0.lastPathComponent.components(separatedBy: ".")[0]}
+                        if (photoIsLocal.count == 0) {
+                            //Download image file
+                            DispatchQueue.global().async {
+                                let localURL = documentsFolderURL.appendingPathComponent(p.Name + ".jpg")
+                                do {
+                                    let imageData = try Data(contentsOf: URL(string: p.Photo)!)
+                                    try imageData.write(to: localURL)
+                                }
+                                catch {
+                                    print("Could not download \(p.Photo)")
+                                    print(error)
+                                }
+                                
+                            }
+                        }
                     }
                 }
                 catch {
@@ -138,6 +154,23 @@ class TabController: UITabBarController {
                     let directorsData = try decoder.decode([Person].self, from: directorsRemoteData)
                     for p in directorsData {
                         directors.append(p)
+                        let photoIsLocal =  localFiles.filter {p.Name == $0.lastPathComponent.components(separatedBy: ".")[0]}
+                        if (photoIsLocal.count == 0) {
+                            print("Image is not downloaded for \(p.Name)")
+                            //Download image file
+                            DispatchQueue.global().async {
+                                let localURL = documentsFolderURL.appendingPathComponent(p.Name + ".jpg")
+                                do {
+                                    let imageData = try Data(contentsOf: URL(string: p.Photo)!)
+                                    try imageData.write(to: localURL)
+                                }
+                                catch {
+                                    print("Could not download \(p.Name) image file")
+                                    print(error)
+                                }
+                                
+                            }
+                        }
                     }
                 }
                 catch {

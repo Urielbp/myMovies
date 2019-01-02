@@ -18,36 +18,12 @@
 		1F0A4F9221D54F5E00E99872 /* RGBiOSUtiliites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9121D54F5E00E99872 /* RGBiOSUtiliites.swift */; };
 		1F0A4F9421D54F7600E99872 /* RGBiOSUtilitiesBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9321D54F7600E99872 /* RGBiOSUtilitiesBundle.swift */; };
 		1F0A4F9621D54F8F00E99872 /* RGBiOSUtilitiesSandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9521D54F8F00E99872 /* RGBiOSUtilitiesSandbox.swift */; };
-		1F0A4FA621D54FC900E99872 /* Antonio Banderas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9721D54FC600E99872 /* Antonio Banderas.jpg */; };
-		1F0A4FA721D54FC900E99872 /* Heather Graham.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9821D54FC600E99872 /* Heather Graham.jpg */; };
-		1F0A4FA821D54FC900E99872 /* Quentin Tarantino.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9921D54FC600E99872 /* Quentin Tarantino.jpg */; };
-		1F0A4FA921D54FC900E99872 /* Cameron Diaz.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9A21D54FC700E99872 /* Cameron Diaz.jpg */; };
-		1F0A4FAA21D54FC900E99872 /* Julie Andrews.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9B21D54FC700E99872 /* Julie Andrews.jpg */; };
-		1F0A4FAB21D54FC900E99872 /* Salma Hayek.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9C21D54FC700E99872 /* Salma Hayek.jpg */; };
-		1F0A4FAC21D54FC900E99872 /* John Lithgow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9D21D54FC700E99872 /* John Lithgow.jpg */; };
-		1F0A4FAD21D54FC900E99872 /* Verne Troyer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9E21D54FC700E99872 /* Verne Troyer.jpg */; };
-		1F0A4FAE21D54FC900E99872 /* Steve Buscemi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4F9F21D54FC700E99872 /* Steve Buscemi.jpg */; };
-		1F0A4FAF21D54FC900E99872 /* Harvey Keitel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA021D54FC700E99872 /* Harvey Keitel.jpg */; };
-		1F0A4FB021D54FC900E99872 /* Tim Roth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA121D54FC800E99872 /* Tim Roth.jpg */; };
-		1F0A4FB121D54FC900E99872 /* Michael York.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA221D54FC800E99872 /* Michael York.jpg */; };
-		1F0A4FB221D54FC900E99872 /* Danny Trejo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA321D54FC800E99872 /* Danny Trejo.jpg */; };
-		1F0A4FB321D54FC900E99872 /* Mike Myers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA421D54FC800E99872 /* Mike Myers.jpg */; };
-		1F0A4FB421D54FC900E99872 /* Eddie Murphy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F0A4FA521D54FC900E99872 /* Eddie Murphy.jpg */; };
 		1F0A4FB721D5534E00E99872 /* ActoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0A4FB621D5534E00E99872 /* ActoresViewController.swift */; };
-		1F1C174B21D6CA0F00705AE5 /* Chris Miller.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174321D6CA0C00705AE5 /* Chris Miller.jpg */; };
-		1F1C174C21D6CA0F00705AE5 /* Robert Rodriguez.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174421D6CA0C00705AE5 /* Robert Rodriguez.jpg */; };
-		1F1C174D21D6CA0F00705AE5 /* Jay Roach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174521D6CA0D00705AE5 /* Jay Roach.jpg */; };
-		1F1C174E21D6CA0F00705AE5 /* Conrad Vernon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174621D6CA0D00705AE5 /* Conrad Vernon.jpg */; };
-		1F1C174F21D6CA0F00705AE5 /* Kelly Asbury.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174721D6CA0D00705AE5 /* Kelly Asbury.jpg */; };
-		1F1C175021D6CA0F00705AE5 /* Andrew Adamson.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174821D6CA0E00705AE5 /* Andrew Adamson.jpg */; };
-		1F1C175121D6CA0F00705AE5 /* Vicky Jenson.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174921D6CA0E00705AE5 /* Vicky Jenson.jpg */; };
-		1F1C175221D6CA0F00705AE5 /* Raman Hui.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1F1C174A21D6CA0F00705AE5 /* Raman Hui.jpg */; };
 		1F23F6F521D8733600C819A4 /* MoviesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F23F6F421D8733600C819A4 /* MoviesList.swift */; };
 		1F23F6F721D8736D00C819A4 /* ActorsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F23F6F621D8736D00C819A4 /* ActorsList.swift */; };
 		1F23F6F921D873A700C819A4 /* DirectorsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F23F6F821D873A700C819A4 /* DirectorsList.swift */; };
 		1F3A40A621D5972D0078E94C /* PeliculaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A40A521D5972C0078E94C /* PeliculaDetailViewController.swift */; };
 		1F3A40AA21D5C3D80078E94C /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A40A921D5C3D80078E94C /* PersonDetailViewController.swift */; };
-		1FA03AF321D82DEF000C313D /* Chris Penn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FA03AF221D82DEE000C313D /* Chris Penn.jpg */; };
 		1FE10E2321D95A7A00469BD1 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE10E2221D95A7A00469BD1 /* TabController.swift */; };
 /* End PBXBuildFile section */
 
@@ -280,30 +256,6 @@
 				1F0A4F8221D54E2C00E99872 /* LaunchScreen.storyboard in Resources */,
 				1F0A4F7F21D54E2C00E99872 /* Assets.xcassets in Resources */,
 				1F0A4F7D21D54E2B00E99872 /* Main.storyboard in Resources */,
-				1F0A4FA621D54FC900E99872 /* Antonio Banderas.jpg in Resources */,
-				1F0A4FA721D54FC900E99872 /* Heather Graham.jpg in Resources */,
-				1F0A4FA821D54FC900E99872 /* Quentin Tarantino.jpg in Resources */,
-				1F0A4FA921D54FC900E99872 /* Cameron Diaz.jpg in Resources */,
-				1F0A4FAA21D54FC900E99872 /* Julie Andrews.jpg in Resources */,
-				1F0A4FAB21D54FC900E99872 /* Salma Hayek.jpg in Resources */,
-				1F0A4FAC21D54FC900E99872 /* John Lithgow.jpg in Resources */,
-				1F0A4FAD21D54FC900E99872 /* Verne Troyer.jpg in Resources */,
-				1F0A4FAE21D54FC900E99872 /* Steve Buscemi.jpg in Resources */,
-				1F0A4FAF21D54FC900E99872 /* Harvey Keitel.jpg in Resources */,
-				1F0A4FB021D54FC900E99872 /* Tim Roth.jpg in Resources */,
-				1F0A4FB121D54FC900E99872 /* Michael York.jpg in Resources */,
-				1F0A4FB221D54FC900E99872 /* Danny Trejo.jpg in Resources */,
-				1F0A4FB321D54FC900E99872 /* Mike Myers.jpg in Resources */,
-				1F0A4FB421D54FC900E99872 /* Eddie Murphy.jpg in Resources */,
-				1F1C174B21D6CA0F00705AE5 /* Chris Miller.jpg in Resources */,
-				1F1C174C21D6CA0F00705AE5 /* Robert Rodriguez.jpg in Resources */,
-				1F1C174D21D6CA0F00705AE5 /* Jay Roach.jpg in Resources */,
-				1F1C174E21D6CA0F00705AE5 /* Conrad Vernon.jpg in Resources */,
-				1F1C174F21D6CA0F00705AE5 /* Kelly Asbury.jpg in Resources */,
-				1F1C175021D6CA0F00705AE5 /* Andrew Adamson.jpg in Resources */,
-				1F1C175121D6CA0F00705AE5 /* Vicky Jenson.jpg in Resources */,
-				1F1C175221D6CA0F00705AE5 /* Raman Hui.jpg in Resources */,
-				1FA03AF321D82DEF000C313D /* Chris Penn.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

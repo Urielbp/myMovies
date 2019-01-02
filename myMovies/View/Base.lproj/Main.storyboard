@@ -42,7 +42,7 @@
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ordenar por" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCb-uq-XSd">
-                                <rect key="frame" x="315" y="90" width="104.5" height="42"/>
+                                <rect key="frame" x="315.5" y="90" width="104.5" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -376,13 +376,13 @@
                                 </prototypes>
                             </tableView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEh-4w-Jgz">
-                                <rect key="frame" x="428" y="70" width="320" height="82"/>
+                                <rect key="frame" x="428" y="70" width="64" height="82"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="tgs-3y-VgF"/>
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ordenar por" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbJ-3o-BuY">
-                                <rect key="frame" x="315" y="99" width="104.5" height="24"/>
+                                <rect key="frame" x="315.5" y="99" width="104.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

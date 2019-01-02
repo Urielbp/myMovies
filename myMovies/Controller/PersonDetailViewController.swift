@@ -19,6 +19,7 @@ class PersonDetailViewController : UIViewController, UITableViewDataSource , UIT
     var p:Person = Person()
     var formatter = DateFormatter()
     var personType:Int = -1
+    var documentsFolderURL = documentsURL()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +30,11 @@ class PersonDetailViewController : UIViewController, UITableViewDataSource , UIT
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        let imagePath = documentsFolderURL.appendingPathComponent(p.Name + ".jpg").path
+        photoUIImageView.image = UIImage(contentsOfFile: imagePath)
+        photoUIImageView.contentMode = .scaleAspectFit
         nameLabel.text = p.Name
         bdayLabel.text = p.Birthday
-        photoUIImageView.image = UIImage(named: p.Name + ".jpg")
-        //TODO: Download the file in the p.Photo URL if the local file doesn't exist
-        photoUIImageView.contentMode = .scaleAspectFit
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
