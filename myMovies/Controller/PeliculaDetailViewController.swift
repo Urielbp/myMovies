@@ -40,6 +40,7 @@ class PeliculaDetailViewController: UIViewController, UITableViewDataSource, UIT
         titleLabel.text = m.Title
         yearLabel.text = "Año: " + String(m.Year)
         runtimeLabel.text = "Duración: " + String(m.Runtime) + " minutos"
+        countriesLabel.text = "Países: "
         for c in m.Countries {
             countriesLabel.text?.append(contentsOf: c)
         }
