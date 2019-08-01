@@ -30,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		089EC5BE22F3749100D4CD68 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		089EC5C022F374FD00D4CD68 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1F0A4F7221D54E2B00E99872 /* myMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F0A4F7521D54E2B00E99872 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F0A4F7721D54E2B00E99872 /* PeliculasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeliculasViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +91,7 @@
 		1F0A4F6921D54E2B00E99872 = {
 			isa = PBXGroup;
 			children = (
+				089EC5C022F374FD00D4CD68 /* README.md */,
 				089EC5BE22F3749100D4CD68 /* LICENSE */,
 				1F0A4F7421D54E2B00E99872 /* myMovies */,
 				1F0A4F7321D54E2B00E99872 /* Products */,
